@@ -5,45 +5,164 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
     <title>华祖神-督脉灸</title>
+    <script type="text/javascript">
+        function getHtmlFontSize() {
+            var html = document.documentElement;
+            var hWidth = html.getBoundingClientRect().width;
+            html.style.fontSize = (hWidth / 750) * 100 + "px";
+        }
+        getHtmlFontSize();
+        window.addEventListener("orientationchange", getHtmlFontSize);
+        window.addEventListener("resize", getHtmlFontSize);
+    </script>
     <style>
         *{padding: 0;margin: 0;}
         img{width: 100%;display: block;}
-        .top {position: relative;}
-        .btn{position:absolute;left:12%;width: 75%;}
+        #top{position: relative;width: 100%;}
+        #look{position: absolute;width: 45%;left: 48%;top:38%;}
+        #alertbox{width:100%;position: absolute;height: 30%;/*background-color: red;*/top:70%;}
+        html,
+        body {
+            height: 100%;
+            overflow: hidden;
+        }
+
+        #wrapper {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        #scroller {
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            -webkit-transform: translateZ(0);
+            -moz-transform: translateZ(0);
+            -ms-transform: translateZ(0);
+            -o-transform: translateZ(0);
+            transform: translateZ(0);
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-text-size-adjust: none;
+            -moz-text-size-adjust: none;
+            -ms-text-size-adjust: none;
+            -o-text-size-adjust: none;
+            text-size-adjust: none;
+        }
+        .sec2{padding-bottom:.2rem;}
+        .sec2 h3{font-size: .28rem; line-height: .41rem; color:#000;padding:0 0 0 .15rem; text-indent: -.15rem;}
+        .sec2 h3:nth-of-type(2){margin-bottom: .15rem;}
+        .sec2 p{font-size: .25rem; line-height: .38rem; color:#000;padding:0 .15rem;text-indent: -.15rem;}
+        .sec2 > p:nth-last-of-type(1) { text-indent: 0; text-align: center;}
+
+        .product-info{background: url(toutiao/images/product_info.png) 0 0 no-repeat; background-size: 100% 3.61rem; padding-top: .76rem; margin-bottom: .15rem;}
+        .product-info p{font-size: .15rem; line-height: .28rem; padding: 0 0 0 4.06rem;}
+        h4{font-size: .32rem;text-align: center;}
     </style>
 </head>
 <body>
-   
-
-<section class="top">
-    <img src="http://img.qiwanfan.com/toutiao/images/zero_9.jpg"/>
-    <a class="btn" href="second103.html" style="top: 64%;">
-        <img src="http://img.qiwanfan.com/toutiao/images/btn7.gif"/>
-    </a>
-    <a class="btn" href="second103.html" style="top: 88%;">
-        <img src="http://img.qiwanfan.com/toutiao/images/btn7.gif"/>
-    </a>
-</section>
-<section id="se2">
-    <img src="http://img.qiwanfan.com/toutiao/images/31dog_footer.jpg" />
-<h4 style="font-size:16px;text-align:center;margin-bottom:10px;">深圳言闻医药连锁有限公司</h4>   
-</section>
-<a class="skip" style="display: block;position: fixed;bottom: 0;width: 100%;height: 40%;z-index: 99;" ></a>
-<script type="text/javascript">
-
-   
-    var obtn = document.getElementsByClassName("btn")[0];
-    var sec2 = document.getElementById("se2");
-    var skip = document.getElementsByClassName("skip")[0];
-    function tocuch(ele) {
-        ele.addEventListener('touchstart', function () {
-            window.location.href='second101.html';
-        })
+<!--topimg-->
+<div id="wrapper">
+    <div id="scroller"> 
+        
+<section id="top">
+            <div style="position: absolute;width:100%; height: 2.6%;background: #5a421e;z-index: 999;"></div>
+            <div style="position: absolute;width:100%; height: 5.3%;top:2.6%; background: #fff;z-index: 999;"></div>
+            <img src="http://img.qiwanfan.com/toutiao/images/2.03_09.jpg" alt=""/>
+            <a href="second103.html"><img src="http://img.qiwanfan.com/toutiao/images/look2.gif" alt="look" id="look"/></a>
+            <div id="alertbox"></div>
+        </section>
+        <!--tel-->
+        <section>
+            <a href="tel:4001767880"><img src="toutiao/images/400-807-1977.png" alt=""/></a>
+        </section>
+        <!--text-->
+        <section class="sec2">
+            <div class="product-info">
+                <p>【产品名称】远红外磁疗贴</p>
+                <p>【主要结构】详见说明书</p>
+                <p>【适用范围】适用于缓解因风寒，邪湿所致的颈、
+                     肩、腰、 腿等关节疼痛及软组织扭挫伤所致疼痛。</p>
+                <p>【注册号】鄂食药监械（准）字2014第2261046号</p>
+                <p>【许可证号】鄂食药监械生产许20170742号</p>
+                <p>【执行标准】YZB/鄂0566-2014</p>
+                <p>【广审批准文号】鄂医械广审（文）第2017120622</p>
+            </div>                
+            <h3>
+                【适用范围】 <br>
+                适用于缓解因风寒，邪湿所致的颈、肩、<br>
+                腰、 腿等关节疼痛及软组织扭挫伤所致疼痛。
+            </h3>
+            <h3>【用法用量】<br>
+                 外用，每天一贴，穴位敷贴或直接贴患处，连续使用10天。
+                如使用后患处感觉不适，应暂停使用，或遵医嘱。
+            </h3>
+            <p>【产品名称】远红外磁疗贴 </p>
+            <p>【生产企业】武汉九叶医疗器械有限公司 </p>
+            <p>【生产地址】武汉市东西湖区台商投资区科迈工业园7栋2楼</p>
+            <p> 【注册号】鄂食药监械(准)字2014第2261046号 </p>
+            <p>【广审批准文号】鄂医械广审(文)第2017120622号 </p>
+            <p>【使用禁忌】孕妇，有自发性出血或损伤后出血者，高度体质过敏 者，疼痛局部皮肤有创伤、感染和溃疡者、使用心脏起搏器者禁用。 </p>
+            <p>*请详细阅读产品说明书或在医务人员的指导下购买或者使用</p>
+            <h4>深圳言闻医药连锁有限公司</h4>
+        </section>
+    </div>
+</div>
+<script type="text/javascript" src="toutiao/js/iscroll-lite.js"></script>
+<script>
+    
+    function loaded(){
+        setTimeout(function() {
+            var myScroll = new IScroll("#wrapper", {
+                scrollbars: false,
+                mouseWheel: false,
+                interactiveScrollbars: true,
+                fadeScrollbars: true,
+                preventDefault: false,
+                probeType: 3,
+                preventDefaultException: {
+                    tagName: /^(INPUT|TEXTAREA|BUTTON|SELECT|A)$/
+                }
+            });
+        }, 100);
     }
     
-    
-    
-</script>
+    window.addEventListener("load", loaded, false);
 
+    function isPassive() {
+        var supportsPassiveOption = false;
+        try {
+            addEventListener("test", null, Object.defineProperty({}, 'passive', {
+                get: function() {
+                    supportsPassiveOption = true;
+                }
+            }));
+        } catch (e) {}
+        return supportsPassiveOption;
+    }
+
+    document.addEventListener('touchmove', function(e) { e.preventDefault(); }, isPassive() ? {
+        capture: false,
+        passive: false
+    } : false);
+
+    function preventImgDrag() {
+        for (i in document.images) {
+            document.images[i].ondragstart = function() {
+                return false;
+            };
+
+        }
+    }
+
+    preventImgDrag();
+</script>
 </body>
 </html>
