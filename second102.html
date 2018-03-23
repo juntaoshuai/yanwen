@@ -91,6 +91,7 @@
                 border: 0;
                 background: #fff;
                 border-radius: 5px;
+                
             }
             
             .content-block {
@@ -414,9 +415,20 @@
             
             #dropdown div {
                 float: left;
-                width: 32%;
+                width: 49%;
                 margin: 0 .5%;
                 position: relative;
+            }
+            #dropdown div:nth-child(2){
+                display: none;
+            }
+            #dropdown div:last-child{
+                border:1px solid #c4c4c4;
+                border-radius: 5px;
+                height: .96rem;
+                line-height: .96rem;
+                font-size: .26rem;
+                padding-left: 5px;
             }
             
             #dropdown div:after {
@@ -473,14 +485,15 @@
                 font-weight: normal;
             }
             
-            body {              
+            body {
                 font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, "sans-serif";
                 -webkit-font-smoothing: antialiased;
                 font-size: .33rem;
                 color: #000;
                 max-width: 750px;
                 margin: 0 auto;
-            }           
+            }
+            
             .header h1 {
                 font-size: .83rem;
                 font-weight: bold;
@@ -781,14 +794,12 @@
         <section class="main">
             <div class="part-aomi">
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content1.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content1.png" alt="" style="margin-top: .2rem;">
                 </p>
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content2.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content2.png" alt="" style="margin-top: .2rem;">
                 </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content2_img.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
+                
                 <div class="consult">
                     <a href="tel:4008071977">半价抢订： 400-807-1977</a>
                 </div>
@@ -846,10 +857,11 @@
                                 <select id="ecityName" name="cityName">
                                 </select>
                             </div>
-                            <div>
+                            <div class="citySelect">-选择城市-</div>
+                            <!-- <div>
                                 <select id="edistrictName" name="districtName">
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -865,11 +877,9 @@
                 </form>
                 <!--表单END-->
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content3.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content3.png" alt="" style="margin-top: .2rem;">
                 </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content4.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
+
                 <div class="consult">
                     <a href="tel:4008071977">半价抢订： 400-807-1977</a>
                 </div>
@@ -927,10 +937,11 @@
                                 <select id="ecityName" name="cityName">
                                 </select>
                             </div>
-                            <div>
+                            <div class="citySelect">-选择城市-</div>
+                            <!-- <div>
                                 <select id="edistrictName" name="districtName">
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -944,27 +955,15 @@
                     </div>
                     <input type="button" name="" id="refer1" class="refer" value="立即提交" />
                 </form>
-                <!--表单END-->
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content5.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content6.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
+
             </div>
             <div class="consult">
                 <a href="tel:4008071977">半价抢订： 400-807-1977</a>
             </div>
 
-            <div class="part">
-                <img src="toutiao/images/16.jpg" alt="">
-            </div>
-            <div class="part part-promise">
-                <img src="http://img.qiwanfan.com/toutiao/images/second_5.jpg" alt="">
-                <!-- <img style="position: absolute;bottom: 0;left: 0;padding: 0 10% 0 4%; z-index: 1;" src="http://img.qiwanfan.com/toutiao/images/promise.gif"> -->
-                <p>承诺一：验货三天，无效全退！！
-                    <br>承诺二：原方原剂，不过敏见效快</p>
-            </div>
+            <p class="tc">
+                <img src="toutiao/images/second_img/second_content4.png" alt="" style="margin-top: .2rem;">
+            </p>
             <div class="part">
                 <h3></h3>
                 <p></p>
@@ -1027,10 +1026,11 @@
                         <select id="ecityName" name="cityName">
                         </select>
                     </div>
-                    <div>
+                    <div class="citySelect">-选择城市-</div>
+                    <!-- <div>
                         <select id="edistrictName" name="districtName">
                         </select>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="form-group">
@@ -1315,339 +1315,367 @@
         <script type="text/javascript" src="toutiao/js/layer/layer.js"></script>
         <script src="toutiao/js/modernizr.custom.js"></script>
         <script src="toutiao/js/jquery.cbpQTRotator.min.js"></script>
-    <script type="text/javascript">
-    $(document).ready(function() {
-        $('.list_lh li:even').addClass('lieven');
-    })
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $('.list_lh li:even').addClass('lieven');
+            })
 
-    /*scroll.js*/
-    $.fn.myScroll = function(options) {
-        //默认配置
-        var defaults = {
-            speed: 40, //滚动速度,值越大速度越慢
-            rowHeight: 24 //每行的高度
-        };
-
-        var opts = $.extend({}, defaults, options),
-            intId = [];
-
-        function marquee(obj, step) {
-
-            obj.find("ul").animate({
-                marginTop: '-=1'
-            }, 0, function() {
-                var s = Math.abs(parseInt($(this).css("margin-top")));
-                if (s >= step) {
-                    $(this).find("li").slice(0, 1).appendTo($(this));
-                    $(this).css("margin-top", 0);
-                }
-            });
-        }
-
-        this.each(function(i) {
-            var sh = opts["rowHeight"],
-                speed = opts["speed"],
-                _this = $(this);
-            intId[i] = setInterval(function() {
-                if (_this.find("ul").height() <= _this.height()) {
-                    clearInterval(intId[i]);
-                } else {
-                    marquee(_this, sh);
-                }
-            }, speed);
-
-            _this.hover(function() {
-                clearInterval(intId[i]);
-            }, function() {
-                intId[i] = setInterval(function() {
-                    if (_this.find("ul").height() <= _this.height()) {
-                        clearInterval(intId[i]);
-                    } else {
-                        marquee(_this, sh);
-                    }
-                }, speed);
-            });
-
-        });
-
-    }
-    /*scroll.js end*/
-
-    $(function() {
-        $("div.list_lh").myScroll({
-            speed: 40, //数值越大，速度越慢
-            rowHeight: 68 //li的高度
-        })
-    })
-
-
-    var addrId = ''; // 位置ID
-    var addr = ''; // 位置信息
-
-    /**
-     * 获取区域
-     * 被调用的地方是  页面首次加载  以及 表单提交成功之后
-     */
-    function loadRegion(form) {
-        $.ajax({
-            url: 'https://api.qiwanfan.com/v1/base/region/provinces',
-            type: 'get',
-            success: function(response) {
-                var data = response.data;
-                var len = data.length;
-                var str = '<option class="province" value="x" selected>-选择省份-</option>';
-                for (var i = 0; i < len; i++) {
-                    str += '<option class="province" value=' + data[i].id + '>' + data[i].name + '</option>'
+            /*scroll.js*/
+            $.fn.myScroll = function(options) {
+                //默认配置
+                var defaults = {
+                    speed: 40, //滚动速度,值越大速度越慢
+                    rowHeight: 24 //每行的高度
                 };
 
-                $(form).find("select[name='provinceName']").html(str);
-                $(form).find("select[name='cityName']").html('<option class="city" value="y" selected>-选择城市-</option>');
-                $(form).find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
-            }
-        })
-    }
+                var opts = $.extend({}, defaults, options),
+                    intId = [];
 
-    $(function() {
-        //封装jquery mobile提示消息
-        function showMsg(con) {
-            layer.open({
-                content: con,
-                skin: 'msg',
-                time: 2, //2秒后自动关闭
-            });
-        }
+                function marquee(obj, step) {
 
-        function formHandle(form){
-            var $province = $(form).find("select[name='provinceName']"),
-                $city = $(form).find("select[name='cityName']"),
-                $district = $(form).find("select[name='districtName']");
-                
+                    obj.find("ul").animate({
+                        marginTop: '-=1'
+                    }, 0, function() {
+                        var s = Math.abs(parseInt($(this).css("margin-top")));
+                        if(s >= step) {
+                            $(this).find("li").slice(0, 1).appendTo($(this));
+                            $(this).css("margin-top", 0);
+                        }
+                    });
+                }
 
-            // 初始化省市区
-            loadRegion(form);
+                this.each(function(i) {
+                    var sh = opts["rowHeight"],
+                        speed = opts["speed"],
+                        _this = $(this);
+                    intId[i] = setInterval(function() {
+                        if(_this.find("ul").height() <= _this.height()) {
+                            clearInterval(intId[i]);
+                        } else {
+                            marquee(_this, sh);
+                        }
+                    }, speed);
 
-            /*表单验证*/
-            $(form).find(".refer").click(function() {
-
-                var $this = $(this),
-                    $form = $this.closest("form"), 
-                    $check = $form.find($("input[name='check1']:checked")),
-                    $name = $form.find("input[name='name']"),
-                    $phone = $form.find("input[name='phone']"),
-                    $site = $form.find("input[name='地址']");         
-                if ($check.val() > 0) {
-                    if ($name.val() == "") {
-                        showMsg("请填写您的姓名")
-                        return false;
-                    } else if ($phone.val() == "") {
-                        showMsg("请输入手机号")
-                        return false;
-                    } else if (!(/^1[3|4|5|7|8][0-9]{9}$/.test($phone.val()))) {
-                        showMsg("请输入正确的手机号");
-                        $phone.focus();
-                        return false;
-                    } else if (addrId === '') {
-                        showMsg("请选择 [省份/城市/区县] 信息")
-                        return false;
-                    } else if ($site.val() == "") {
-                        showMsg("请填写详细地址")
-                        return false;
-                    }
-
-                    addr = $name.val() + ' ' + $phone.val() + ' ' + addr + ' ' + $site.val();
-                    $this.attr('disabled', true).val('提交中...');
-
-                    var subLayer = layer.open({
-                        type: 2,
-                        content: '提交中',
-                        shadeClose: false
+                    _this.hover(function() {
+                        clearInterval(intId[i]);
+                    }, function() {
+                        intId[i] = setInterval(function() {
+                            if(_this.find("ul").height() <= _this.height()) {
+                                clearInterval(intId[i]);
+                            } else {
+                                marquee(_this, sh);
+                            }
+                        }, speed);
                     });
 
-                    $.ajax({
-                        type: 'post',
-                        url: 'https://api.qiwanfan.com/v1/te/trade/ordertoutiao',
-                        dataType: 'json',
-                        data: {
-                            deliveryAddressId: addrId,
-                            deliveryAddressCopy: addr,
-                            skuId: 7328319596527616,
-                            count: $check.val(),
-                            sellerId: 7435500060278784,
-                            sellerName: '深圳言文医药连锁有限公司-2'
-                        },
-                        success: function(data) {
-                            layer.close(subLayer);
-                            if (!data) {
-                                showMsg("下单失败!!!")
-                                return;
-                            } else {
-                                if (data.success) {
-                                    $form[0].reset();
-                                    _taq.push({ convert_id: "88825152278", event_type: "form" })
-                                    showMsg("下单成功")
-                                } else {
-                                    console.log(data.message);
+                });
+
+            }
+            /*scroll.js end*/
+
+            $(function() {
+                $("div.list_lh").myScroll({
+                    speed: 40, //数值越大，速度越慢
+                    rowHeight: 68 //li的高度
+                })
+            })
+
+            
+
+            /**
+             * 获取区域
+             * 被调用的地方是  页面首次加载  以及 表单提交成功之后
+             */
+            function loadRegion(form) {
+                $.ajax({
+                    url: 'https://api.qiwanfan.com/v1/base/region/provinces',
+                    type: 'get',
+                    success: function(response) {
+                        var data = response.data;
+                        var len = data.length;
+                        var str = '<option class="province" value="x" selected>-选择省份-</option>';
+                        for(var i = 0; i < len; i++) {
+                            str += '<option class="province" value=' + data[i].id + '>' + data[i].name + '</option>'
+                        };
+
+                        $(form).find("select[name='provinceName']").html(str);
+                        $(form).find("select[name='cityName']").html('<option class="city" value="y" selected>-选择城市-</option>');
+                        $(form).find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
+                    }
+                })
+            }
+
+            $(function() {
+                //封装jquery mobile提示消息
+                function showMsg(con) {
+                    layer.open({
+                        content: con,
+                        skin: 'msg',
+                        time: 2, //2秒后自动关闭
+                    });
+                }
+
+                function formHandle(form) {
+                    var $province = $(form).find("select[name='provinceName']"),
+                        $city = $(form).find("select[name='cityName']"),
+                        $district = $(form).find("select[name='districtName']"),
+                        $citySelect = $(form).find(".citySelect"),
+                        addrId = '', // 位置ID
+                        addr = ''; // 位置信息
+
+                    // 初始化省市区
+                    loadRegion(form);
+
+                    /*表单验证*/
+                    $(form).find(".refer").click(function() {
+                        var $this = $(this),
+                            $form = $this.closest("form"),
+                            $check = $form.find($("input[name='check1']:checked")),
+                            $name = $form.find("input[name='name']"),
+                            $phone = $form.find("input[name='phone']"),
+                            $site = $form.find("input[name='地址']");
+                        if($check.val() > 0) {
+                            if($name.val() == "") {
+                                showMsg("请填写您的姓名")
+                                return false;
+                            } else if($phone.val() == "") {
+                                showMsg("请输入手机号")
+                                return false;
+                            } else if(!(/^1[3|4|5|7|8][0-9]{9}$/.test($phone.val()))) {
+                                showMsg("请输入正确的手机号");
+                                $phone.focus();
+                                return false;
+                            } else if(addrId === '') {
+                                showMsg("请选择 [省份/城市] 信息")
+                                return false;
+                            } else if($site.val() == "") {
+                                showMsg("请填写详细地址")
+                                return false;
+                            }
+
+                            addr = $name.val() + ' ' + $phone.val() + ' ' + addr + ' ' + $site.val();
+                            $this.attr('disabled', true).val('提交中...');
+
+                            var subLayer = layer.open({
+                                type: 2,
+                                content: '提交中',
+                                shadeClose: false
+                            });
+
+                            $.ajax({
+                                type: 'post',
+                                url: 'https://api.qiwanfan.com/v1/te/trade/ordertoutiao',
+                                dataType: 'json',
+                                data: {
+                                    deliveryAddressId: addrId,
+                                    deliveryAddressCopy: addr,
+                                    skuId: 7328319596527616,
+                                    count: $check.val(),
+                                    sellerId: 7435500060278784,
+                                    sellerName: '深圳言文医药连锁有限公司-2'
+                                },
+                                success: function(data) {
+                                    layer.close(subLayer);
+                                    if(!data) {
+                                        showMsg("下单失败!!!")
+                                        return;
+                                    } else {
+                                        if(data.success) {
+                                            $form[0].reset();
+                                            _taq.push({
+                                                convert_id: "88825152278",
+                                                event_type: "form"
+                                            })
+                                            showMsg("下单成功")
+                                        } else {
+                                            console.log(data.message);
+                                            showMsg("下单失败!!!")
+                                        }
+                                    }
+                                },
+                                error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                    layer.close(subLayer);
                                     showMsg("下单失败!!!")
                                 }
-                            }
-                        },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            layer.close(subLayer);
-                            showMsg("下单失败!!!")
+                            });
+
+                            $this.attr('disabled', false).val('立即提交');
+                            addrId = ''; // 位置ID
+                            addr = '';
+                            $(form).find("select[name='cityName']").html('<option class="city" value="y" selected>-选择城市-</option>');
+
+                        } else {
+
+                            showMsg('选择规格')
+                        }
+                    })
+
+                    $province.change(function() {
+                        addrId = '';
+                        addr = '';
+                        var $this = $(this);
+                        var $selectOption = $this.find('option:selected');
+                        var id = $selectOption.val();
+                        if(id === 'x') { // 说明他没有选中
+                            console.log("省份没有选择");
+                            $city.html('<option class="city" value="y" selected>-选择城市-</option>');
+                            $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+
+                            $citySelect.trigger("click");
+                            $(this).parent().next().hide().next().show();
+
+                        } else {
+                            var cityIndex = layer.open({
+                                type: 2,
+                                content: '加载城市中'
+                            });
+                            $.ajax({
+                                url: 'https://api.qiwanfan.com/v1/base/region/citys/' + id,
+                                type: 'get',
+                                success: function(response) {
+                                    var data = response.data;
+                                    var len = data.length;
+                                    var str = '<option class="city" value="y" selected>-选择城市-</option>';
+                                    for(var i = 0; i < len; i++) {
+                                        str += '<option class="city" value=' + data[i].id + '>' + data[i].name + '</option>'
+                                    };
+                                    $this.closest("form").find("select[name='cityName']").html(str);
+                                    $this.closest("form").find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
+                                    layer.close(cityIndex);
+
+                                    $citySelect.trigger("click");
+
+                                },
+                                error: function() {
+                                    layer.close(cityIndex);
+                                    showMsg("网络请求失败，请稍后再试")
+                                }
+                            });
+                        }
+                    })
+
+
+
+                    $city.change(function() {
+                        addrId = '';
+                        addr = '';
+                        var $this = $(this);
+                        var $district = $this.closest("form").find("select[name='districtName']");
+                        var $selectOption = $this.find('option:selected');
+                        var id = $selectOption.val();
+                        if(id === 'y') {
+                            console.log("城市没有选择");
+                            $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+                        } else {
+
+                            var quIndex = layer.open({
+                                type: 2,
+                                content: '加载区县中'
+                            });
+
+                            $.ajax({
+                                url: 'https://api.qiwanfan.com/v1/base/region/countys/' + id,
+                                type: 'get',
+                                success: function(response) {
+                                    var data = response.data;
+                                    var len = data.length;
+                                    var str = '<option class="county" value="z" selected>-选择区县-</option>';
+                                    for(var i = 0; i < len; i++) {
+                                        str += '<option class="county"  value = ' + data[i].id + ' >' + data[i].name + '</option > '
+                                    };
+                                    $district.html(str);
+
+                                    layer.close(quIndex)
+
+                                    addrId = id;
+                                    addr = $province.find('option:selected').text() + $city.find('option:selected').text();
+                                    console.log("选择的地址信息", addrId, addr);
+
+                                },
+                                error: function() {
+                                    layer.close(quIndex);
+                                    showMsg("网络请求失败，请稍后再试")
+                                }
+                            })
                         }
                     });
 
 
-                    $this.attr('disabled', false).val('立即提交');
+                    $citySelect.click(function(){
+                        if($province.val() == "x"){
+                            showMsg("请先选择省份")
+                        }else{
+                            $(this).hide().prev().show();
+                        }
 
-                    loadRegion();
-                } else {
+                    });
 
-                    showMsg('选择规格')
+
+                    $district.change(function() {
+                        addrId = '';
+                        addr = '';
+                        var $this = $(this);
+                        var $province = $this.closest("form").find("select[name='provinceName']");
+                        var $city = $this.closest("form").find("select[name='cityName']");
+                        var $selectOption = $(this).find('option:selected');
+                        var id = $selectOption.val();
+                        var name = $selectOption.text();
+                        if(id === 'z') {
+                            console.log("区县没有选择");
+                        } else {
+                            addrId = id;
+                            addr = $province.find('option:selected').text() + $city.find('option:selected').text() + $this.find('option:selected').text();
+                            console.log("选择的地址信息", addrId, addr);
+                        }
+                    })
+
                 }
+
+                formHandle("#form1");
+                formHandle("#form2");
+                formHandle("#form3");
+
+                $('#cbp-qtrotator').cbpQTRotator();
+
             })
 
-            $province.change(function() {
-            addrId = '';
-            addr = '';
-            var $this = $(this);
-            var $selectOption = $this.find('option:selected');
-            var id = $selectOption.val();
-            if (id === 'x') { // 说明他没有选中
-                console.log("省份没有选择");
-                $city.html('<option class="city" value="y" selected>-选择城市-</option>');
-                $district.html('<option class="county" value="z" selected>-选择区县-</option>');
-            } else {
-                var cityIndex = layer.open({
-                    type: 2,
-                    content: '加载城市中'
-                });
-                $.ajax({
-                    url: 'https://api.qiwanfan.com/v1/base/region/citys/' + id,
-                    type: 'get',
-                    success: function(response) {
-                        var data = response.data;
-                        var len = data.length;
-                        var str = '<option class="city" value="y" selected>-选择城市-</option>';
-                        for (var i = 0; i < len; i++) {
-                            str += '<option class="city" value=' + data[i].id + '>' + data[i].name + '</option>'
-                        };
-                        $this.closest("form").find("select[name='cityName']").html(str);
-                        $this.closest("form").find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
-                        layer.close(cityIndex);
-                    },
-                    error: function() {
-                        layer.close(cityIndex);
-                        showMsg("网络请求失败，请稍后再试")
-                    }
-                });
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//piwik.whjblk.com/";
+            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq.push(['setSiteId', '23']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+
+        (function (root) {
+            root._tt_config = true;
+            var ta = document.createElement('script');
+            ta.type = 'text/javascript';
+            ta.async = true;
+            ta.src = document.location.protocol + '//' + 's1.pstatp.com/bytecom/resource/track_log/src/toutiao-track-log.js';
+            ta.onerror = function () {
+                var request = new XMLHttpRequest();
+                var web_url = window.encodeURIComponent(window.location.href);
+                var js_url = ta.src;
+                var url = '//ad.toutiao.com/link_monitor/cdn_failed?web_url=' + web_url + '&js_url=' + js_url + '&convert_id=88825152278';
+                request.open('GET', url, true);
+                request.send(null);
             }
-        })
-
-        $city.change(function() {
-            addrId = '';
-            addr = '';
-            var $this = $(this);
-            var $district = $this.closest("form").find("select[name='districtName']"); 
-            var $selectOption = $this.find('option:selected');
-            var id = $selectOption.val();
-            if (id === 'y') {
-                console.log("城市没有选择");
-                $district.html('<option class="county" value="z" selected>-选择区县-</option>');
-            } else {
-
-                var quIndex = layer.open({
-                    type: 2,
-                    content: '加载区县中'
-                });
-
-                $.ajax({
-                    url: 'https://api.qiwanfan.com/v1/base/region/countys/' + id,
-                    type: 'get',
-                    success: function(response) {
-                        var data = response.data;
-                        var len = data.length;
-                        var str = '<option class="county" value="z" selected>-选择区县-</option>';
-                        for (var i = 0; i < len; i++) {
-                            str += '<option class="county"  value = ' + data[i].id + ' >' + data[i].name + '</option > '
-                        };
-                        $district.html(str);
-
-                        layer.close(quIndex)
-
-                    },
-                    error: function() {
-                        layer.close(quIndex);
-                        showMsg("网络请求失败，请稍后再试")
-                    }
-                })
-            }
-        })
-
-        $district.change(function() {
-            addrId = '';
-            addr = '';
-            var $this = $(this);
-            var $province = $this.closest("form").find("select[name='provinceName']"); 
-            var $city = $this.closest("form").find("select[name='cityName']"); 
-            var $selectOption = $(this).find('option:selected');
-            var id = $selectOption.val();
-            var name = $selectOption.text();
-            if (id === 'z') {
-                console.log("区县没有选择");
-            } else {
-                addrId = id;
-                addr = $province.find('option:selected').text() + $city.find('option:selected').text() + $this.find('option:selected').text();
-                console.log("选择的地址信息", addrId, addr);
-            }
-        })
-
-        }
-
-        formHandle("#form1");
-        formHandle("#form2");
-        formHandle("#form3");
-        
-        $('#cbp-qtrotator').cbpQTRotator();
-
-    })
-
-    var _paq = _paq || [];
-    /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-        var u = "//piwik.whjblk.com/";
-        _paq.push(['setTrackerUrl', u + 'piwik.php']);
-        _paq.push(['setSiteId', '2']);
-        var d = document,
-            g = d.createElement('script'),
-            s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript';
-        g.async = true;
-        g.defer = true;
-        g.src = u + 'piwik.js';
-        s.parentNode.insertBefore(g, s);
-    })();
-
-    (function(root) {
-        root._tt_config = true;
-        var ta = document.createElement('script');
-        ta.type = 'text/javascript';
-        ta.async = true;
-        ta.src = document.location.protocol + '//' + 's1.pstatp.com/bytecom/resource/track_log/src/toutiao-track-log.js';
-        ta.onerror = function() {
-            var request = new XMLHttpRequest();
-            var web_url = window.encodeURIComponent(window.location.href);
-            var js_url = ta.src;
-            var url = '//ad.toutiao.com/link_monitor/cdn_failed?web_url=' + web_url + '&js_url=' + js_url + '&convert_id=88825152278';
-            request.open('GET', url, true);
-            request.send(null);
-        }
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(ta, s);
-    })(window);
-    </script>
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ta, s);
+        })(window);
+        </script>
 
     </body>
+
 </html>

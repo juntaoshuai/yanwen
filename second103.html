@@ -91,6 +91,7 @@
                 border: 0;
                 background: #fff;
                 border-radius: 5px;
+                
             }
             
             .content-block {
@@ -414,9 +415,20 @@
             
             #dropdown div {
                 float: left;
-                width: 32%;
+                width: 49%;
                 margin: 0 .5%;
                 position: relative;
+            }
+            #dropdown div:nth-child(2){
+                display: none;
+            }
+            #dropdown div:last-child{
+                border:1px solid #c4c4c4;
+                border-radius: 5px;
+                height: .96rem;
+                line-height: .96rem;
+                font-size: .26rem;
+                padding-left: 5px;
             }
             
             #dropdown div:after {
@@ -782,10 +794,10 @@
         <section class="main">
             <div class="part-aomi">
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content1.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content1.png" alt="" style="margin-top: .2rem;">
                 </p>
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content2.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content2.png" alt="" style="margin-top: .2rem;">
                 </p>
                 
                 <div class="consult">
@@ -845,10 +857,11 @@
                                 <select id="ecityName" name="cityName">
                                 </select>
                             </div>
-                            <div>
+                            <div class="citySelect">-选择城市-</div>
+                            <!-- <div>
                                 <select id="edistrictName" name="districtName">
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -864,7 +877,7 @@
                 </form>
                 <!--表单END-->
                 <p class="tc">
-                    <img src="toutiao/images/second_img/second_content3.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                    <img src="toutiao/images/second_img/second_content3.png" alt="" style="margin-top: .2rem;">
                 </p>
 
                 <div class="consult">
@@ -924,10 +937,11 @@
                                 <select id="ecityName" name="cityName">
                                 </select>
                             </div>
-                            <div>
+                            <div class="citySelect">-选择城市-</div>
+                            <!-- <div>
                                 <select id="edistrictName" name="districtName">
                                 </select>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="form-group">
@@ -948,7 +962,7 @@
             </div>
 
             <p class="tc">
-                <img src="toutiao/images/second_img/second_content4.png" alt="" style="width:6.7rem;margin-top: .2rem;">
+                <img src="toutiao/images/second_img/second_content4.png" alt="" style="margin-top: .2rem;">
             </p>
             <div class="part">
                 <h3></h3>
@@ -1012,10 +1026,11 @@
                         <select id="ecityName" name="cityName">
                         </select>
                     </div>
-                    <div>
+                    <div class="citySelect">-选择城市-</div>
+                    <!-- <div>
                         <select id="edistrictName" name="districtName">
                         </select>
-                    </div>
+                    </div> -->
                 </div>
             </div>
             <div class="form-group">
@@ -1365,8 +1380,7 @@
                 })
             })
 
-            var addrId = ''; // 位置ID
-            var addr = ''; // 位置信息
+            
 
             /**
              * 获取区域
@@ -1404,14 +1418,16 @@
                 function formHandle(form) {
                     var $province = $(form).find("select[name='provinceName']"),
                         $city = $(form).find("select[name='cityName']"),
-                        $district = $(form).find("select[name='districtName']");
+                        $district = $(form).find("select[name='districtName']"),
+                        $citySelect = $(form).find(".citySelect"),
+                        addrId = '', // 位置ID
+                        addr = ''; // 位置信息
 
                     // 初始化省市区
                     loadRegion(form);
 
                     /*表单验证*/
                     $(form).find(".refer").click(function() {
-
                         var $this = $(this),
                             $form = $this.closest("form"),
                             $check = $form.find($("input[name='check1']:checked")),
@@ -1430,7 +1446,7 @@
                                 $phone.focus();
                                 return false;
                             } else if(addrId === '') {
-                                showMsg("请选择 [省份/城市/区县] 信息")
+                                showMsg("请选择 [省份/城市] 信息")
                                 return false;
                             } else if($site.val() == "") {
                                 showMsg("请填写详细地址")
@@ -1484,8 +1500,10 @@
                             });
 
                             $this.attr('disabled', false).val('立即提交');
+                            addrId = ''; // 位置ID
+                            addr = '';
+                            $(form).find("select[name='cityName']").html('<option class="city" value="y" selected>-选择城市-</option>');
 
-                            loadRegion();
                         } else {
 
                             showMsg('选择规格')
@@ -1502,6 +1520,10 @@
                             console.log("省份没有选择");
                             $city.html('<option class="city" value="y" selected>-选择城市-</option>');
                             $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+
+                            $citySelect.trigger("click");
+                            $(this).parent().next().hide().next().show();
+
                         } else {
                             var cityIndex = layer.open({
                                 type: 2,
@@ -1520,6 +1542,9 @@
                                     $this.closest("form").find("select[name='cityName']").html(str);
                                     $this.closest("form").find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
                                     layer.close(cityIndex);
+
+                                    $citySelect.trigger("click");
+
                                 },
                                 error: function() {
                                     layer.close(cityIndex);
@@ -1528,6 +1553,8 @@
                             });
                         }
                     })
+
+
 
                     $city.change(function() {
                         addrId = '';
@@ -1560,6 +1587,10 @@
 
                                     layer.close(quIndex)
 
+                                    addrId = id;
+                                    addr = $province.find('option:selected').text() + $city.find('option:selected').text();
+                                    console.log("选择的地址信息", addrId, addr);
+
                                 },
                                 error: function() {
                                     layer.close(quIndex);
@@ -1567,7 +1598,18 @@
                                 }
                             })
                         }
-                    })
+                    });
+
+
+                    $citySelect.click(function(){
+                        if($province.val() == "x"){
+                            showMsg("请先选择省份")
+                        }else{
+                            $(this).hide().prev().show();
+                        }
+
+                    });
+
 
                     $district.change(function() {
                         addrId = '';
@@ -1597,41 +1639,41 @@
 
             })
 
-            var _paq = _paq || [];
-            /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-            _paq.push(['trackPageView']);
-            _paq.push(['enableLinkTracking']);
-            (function() {
-                var u = "//piwik.whjblk.com/";
-                _paq.push(['setTrackerUrl', u + 'piwik.php']);
-                _paq.push(['setSiteId', '2']);
-                var d = document,
-                    g = d.createElement('script'),
-                    s = d.getElementsByTagName('script')[0];
-                g.type = 'text/javascript';
-                g.async = true;
-                g.defer = true;
-                g.src = u + 'piwik.js';
-                s.parentNode.insertBefore(g, s);
-            })();
+        var _paq = _paq || [];
+        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function () {
+            var u = "//piwik.whjblk.com/";
+            _paq.push(['setTrackerUrl', u + 'piwik.php']);
+            _paq.push(['setSiteId', '23']);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'piwik.js';
+            s.parentNode.insertBefore(g, s);
+        })();
 
-            (function(root) {
-                root._tt_config = true;
-                var ta = document.createElement('script');
-                ta.type = 'text/javascript';
-                ta.async = true;
-                ta.src = document.location.protocol + '//' + 's1.pstatp.com/bytecom/resource/track_log/src/toutiao-track-log.js';
-                ta.onerror = function() {
-                    var request = new XMLHttpRequest();
-                    var web_url = window.encodeURIComponent(window.location.href);
-                    var js_url = ta.src;
-                    var url = '//ad.toutiao.com/link_monitor/cdn_failed?web_url=' + web_url + '&js_url=' + js_url + '&convert_id=88825832760';
-                    request.open('GET', url, true);
-                    request.send(null);
-                }
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ta, s);
-            })(window);
+        (function (root) {
+            root._tt_config = true;
+            var ta = document.createElement('script');
+            ta.type = 'text/javascript';
+            ta.async = true;
+            ta.src = document.location.protocol + '//' + 's1.pstatp.com/bytecom/resource/track_log/src/toutiao-track-log.js';
+            ta.onerror = function () {
+                var request = new XMLHttpRequest();
+                var web_url = window.encodeURIComponent(window.location.href);
+                var js_url = ta.src;
+                var url = '//ad.toutiao.com/link_monitor/cdn_failed?web_url=' + web_url + '&js_url=' + js_url + '&convert_id=88825832760';
+                request.open('GET', url, true);
+                request.send(null);
+            }
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ta, s);
+        })(window);
         </script>
 
     </body>
