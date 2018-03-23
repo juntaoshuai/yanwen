@@ -1519,6 +1519,10 @@
                             console.log("省份没有选择");
                             $city.html('<option class="city" value="y" selected>-选择城市-</option>');
                             $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+
+                            $citySelect.trigger("click");
+                            $(this).parent().next().hide().next().show();
+
                         } else {
                             var cityIndex = layer.open({
                                 type: 2,
