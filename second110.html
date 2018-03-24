@@ -1,1321 +1,1244 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta charset="UTF-8">
+<title>华祖神·督脉灸</title>
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+<script type="text/javascript">
+    function getHtmlFontSize() {
+        var html = document.documentElement;
+        var hWidth = html.getBoundingClientRect().width;
+        var designW = 750;
+        hWidth = hWidth >= designW ? designW : hWidth;
+        html.style.fontSize = (hWidth / designW) * 100 + "px";
+    }
+    getHtmlFontSize();
+    window.addEventListener("orientationchange", getHtmlFontSize);
+    window.addEventListener("resize", getHtmlFontSize);
+    </script>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "微软雅黑";
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
 
-    <head>
-        <meta charset="UTF-8">
-        <title>华祖神·督脉灸</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-        <script type="text/javascript">
-            function getHtmlFontSize() {
-                var html = document.documentElement;
-                var hWidth = html.getBoundingClientRect().width;
-                var designW = 750;
-                hWidth = hWidth >= designW ? designW : hWidth;
-                html.style.fontSize = (hWidth / designW) * 100 + "px";
-            }
-            getHtmlFontSize();
-            window.addEventListener("orientationchange", getHtmlFontSize);
-            window.addEventListener("resize", getHtmlFontSize);
-        </script>
-        <style type="text/css">
-            * {
-                margin: 0;
-                padding: 0;
-                font-family: "微软雅黑";
-                box-sizing: border-box;
-                -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-            }
-            
-            input[type='text'],
-            input[type='button'],
-            select {
-                -webkit-appearance: none;
-            }
-            
-            .clear:after {
-                display: block;
-                content: "";
-                clear: both;
-            }
-            
-            img {
-                width: 100%;
-                border: none;
-                vertical-align: top;
-            }
-            
-            footer>a {
-                float: left;
-                width: 50%
-            }
-            
-            footer>a>img {
-                width: 100%;
-            }
-            
-            footer {
-                max-width: 750px;
-                position: fixed;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                -webkit-transform: translateX(-50%);
-                width: 100%;
-                z-index: 999;
-            }
-            
-            .leftbox,
-            .rightbox {
-                width: 50%;
-                height: 1.12rem;
-                display: inline-block;
-            }
-            
-            .leftbox {
-                background: url("http://img.qiwanfan.com/toutiao/images/left.gif") no-repeat;
-                background-size: 100% 100%
-            }
-            
-            .rightbox {
-                background: url("http://img.qiwanfan.com/toutiao/images/right.gif") no-repeat;
-                background-size: 100% 100%
-            }
-            /*********************************************** 表单 ************************************************/
-            
-            .subtraction,
-            .add {
-                float: left;
-                text-align: center;
-                width: 1.3rem;
-                height: 2rem;
-                border: 0;
-                background: #fff;
-                border-radius: 5px;
-            }
-            
-            .content-block {
-                float: left;
-                width: 79%;
-            }
-            
-            .refer {
-                display: block;
-                width: 100%;
-                height: .96rem;
-                border-radius: 5px;
-                background: #f00;
-                color: #fff;
-                text-align: center;
-                line-height: .96rem;
-                font-size: .36rem;
-                margin: .2rem auto;
-                border: 0;
-            }
-            
-            .cbp_img1 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 0 0;
-            }
-            
-            .cbp_img2 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 14.3% 0;
-            }
-            
-            .cbp_img3 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 28.6% 0;
-            }
-            
-            .cbp_img4 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 42.9% 0;
-            }
-            
-            .cbp_img5 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 57.2% 0;
-            }
-            
-            .cbp_img6 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 71.5% 0;
-            }
-            
-            .cbp_img7 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 85.8% 0;
-            }
-            
-            .cbp_img8 {
-                background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 100% 0;
-            }
-            
-            .cbp_img1,
-            .cbp_img2,
-            .cbp_img3,
-            .cbp_img4,
-            .cbp_img5,
-            .cbp_img6,
-            .cbp_img7,
-            .cbp_img8 {
-                float: left;
-                width: 15%;
-                margin-left: 5%;
-                background-size: cover;
-                padding-top: 15%;
-            }
-            /*外部CSS*/
-            
-            .cbp-qtrotator {
-                position: relative;
-                margin: .5rem auto;
-                /*max-width: 800px;*/
-                width: 100%;
-            }
-            
-            .cbp-qtrotator .cbp-qtcontent {
-                position: absolute;
-                /*min-height: 200px;*/
-                border-top: 1px solid #f4f4f4;
-                border-bottom: 1px solid #f4f4f4;
-                padding: .5rem 0 .8rem;
-                top: 0;
-                z-index: 0;
-                opacity: 0;
-                width: 100%;
-            }
-            
-            .no-js .cbp-qtrotator .cbp-qtcontent {
-                border-bottom: none;
-            }
-            
-            .cbp-qtrotator .cbp-qtcontent.cbp-qtcurrent,
-            .no-js .cbp-qtrotator .cbp-qtcontent {
-                position: relative;
-                z-index: 100;
-                pointer-events: auto;
-                opacity: 1;
-            }
-            
-            .cbp-qtrotator .cbp-qtcontent:before,
-            .cbp-qtrotator .cbp-qtcontent:after {
-                content: " ";
-                display: table;
-            }
-            
-            .cbp-qtrotator .cbp-qtcontent:after {
-                clear: both;
-            }
-            
-            .cbp-qtprogress {
-                position: absolute;
-                background: #47a3da;
-                height: 1px;
-                width: 0%;
-                top: 0;
-                z-index: 1000;
-            }
-            
-            .cbp-qtrotator blockquote {
-                margin: 0;
-                padding: 0;
-            }
-            
-            .container>header {
-                border-bottom: 1px dashed #867e7e;
-                position: relative;
-            }
-            
-            .container>header>h1 {
-                text-align: center;
-                padding: 0 .3rem 0 .3rem;
-                font-size: .4rem;
-                font-weight: bold;
-                color: #867e7e;
-                display: inline-block;
-                background: #fff;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -ms-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-            }
-            
-            .cbp_img,
-            .cbp_note,
-            .cbp_Like {
-                float: left;
-            }
-            
-            .cbp_img {
-                width: 20%;
-            }
-            
-            .cbp_img>img {
-                width: 80%;
-                float: right;
-            }
-            
-            .cbp_note {
-                width: 65%;
-            }
-            
-            .cbp_note>h4 {
-                font-size: .28rem;
-                padding-left: 5%;
-                margin-bottom: 0.12rem;
-                font-weight: bold;
-            }
-            
-            .cbp_note>p {
-                font-size: .24rem;
-                line-height: .36rem;
-                padding: 0 5% 0 5%;
-            }
-            
-            .cbp_Like {
-                width: 15%;
-            }
-            
-            .cbp_Like>img {
-                display: inline-block;
-                vertical-align: middle;
-                width: 30%;
-            }
-            
-            .cbp_Like>span {
-                display: inline-block;
-                vertical-align: middle;
-                font-size: .28rem;
-            }
-            
-            .cbp-qtcontent>div {
-                min-height: 2.5rem;
-            }
-            /*外部CSS*/
-            /* CSS Document */
-            
-            input,
-            button,
-            select,
-            textarea {
-                outline: none;
-            }
-            
-            select {
-                height: .96rem;
-                width: 32%;
-                border-radius: 5px;
-                background: none;
-            }
-            
-            ul,
-            li,
-            dl,
-            ol {
-                list-style: none;
-            }
-            
-            a {
-                color: #666;
-                text-decoration: none;
-            }
-            
-            .box {
-                width: 980px;
-                margin: 0 auto;
-            }
-            
-            .bcon {
-                width: 80%;
-                border: 1px solid #eee;
-                margin: 30px auto;
-            }
-            
-            .bcon h1 {
-                border-bottom: 1px solid #eee;
-                padding: 0 10px;
-            }
-            
-            .bcon h1 b {
-                font: bold 14px/40px '宋体';
-                border-top: 2px solid #3492D1;
-                padding: 0 8px;
-                margin-top: -1px;
-                display: inline-block;
-            }
-            
-            .list_lh {
-                height: 400px;
-                overflow: hidden;
-            }
-            
-            .list_lh li {
-                padding: 10px;
-                font-size: 12px;
-            }
-            
-            .list_lh li.lieven {
-                background: #F0F2F3;
-            }
-            
-            .list_lh li p {
-                height: 24px;
-                line-height: 24px;
-            }
-            
-            .list_lh li p a {
-                float: left;
-            }
-            
-            .list_lh li p em {
-                width: 80px;
-                font: normal 12px/24px Arial;
-                color: #FF3300;
-                float: right;
-                display: inline-block;
-            }
-            
-            .list_lh li p span {
-                color: #999;
-                float: right;
-            }
-            
-            .list_lh li p a.btn_lh {
-                background: #28BD19;
-                height: 17px;
-                line-height: 17px;
-                color: #fff;
-                padding: 0 5px;
-                margin-top: 4px;
-                display: inline-block;
-                float: right;
-            }
-            
-            .btn_lh:hover {
-                color: #fff;
-                text-decoration: none;
-            }
-            
-            .btm p {
-                font: normal 12px/24px 'Microsoft YaHei';
-                text-align: center;
-            }
-            
-            video {
-                display: block;
-                width: 90%;
-                margin: .1rem auto;
-            }
-            
-            #dropdown:after {
-                content: "";
-                display: block;
-                clear: both;
-                visibility: hidden;
-                height: 0;
-            }
-            
-            #dropdown div {
-                float: left;
-                width: 32%;
-                margin: 0 .5%;
-                position: relative;
-            }
-            
-            #dropdown div:after {
-                content: "";
-                color: #c4c4c4;
-                width: 0;
-                height: 0;
-                font-size: 0;
-                line-height: 0;
-                border-style: solid dashed dashed dashed;
-                border-width: 5px;
-                border-color: #000 transparent transparent transparent;
-                position: absolute;
-                right: 8px;
-                top: 20px;
-            }
-            
-            #dropdown div select {
-                width: 100%;
-                border: 1px solid #c4c4c4;
-                padding-left: 5px;
-            }
-            
-            @media screen and (min-width: 320px) {
-                html {
-                    font-size: 43px;
-                }
-            }
-            
-            @media screen and (min-width: 360px) {
-                html {
-                    font-size: 48px;
-                }
-            }
-            
-            @media screen and (min-width: 375px) {
-                html {
-                    font-size: 50px;
-                }
-            }
-            
-            @media screen and (min-width: 414px) {
-                html {
-                    font-size: 55px;
-                }
-            }
-            
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                font-weight: normal;
-            }
-            
-            body {              
-                font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, "sans-serif";
-                -webkit-font-smoothing: antialiased;
-                font-size: .33rem;
-                color: #000;
-                max-width: 750px;
-                margin: 0 auto;
-            }           
-            .header h1 {
-                font-size: .83rem;
-                font-weight: bold;
-                line-height: 1.2rem;
-                color: #000;
-                text-align: center;
-                letter-spacing: .04rem;
-            }
-            
-            .header h1 span {
-                color: #f00;
-                font-size: .83rem;
-            }
-            
-            .red {
-                color: #f00;
-            }
-            
-            .part-aomi {
-                font-size: .29rem;
-                line-height: .42rem;
-                padding: .2rem 0 0;
-            }
-            
-            .part-aomi p {
-                margin-bottom: .1rem;
-            }
-            
-            .part-aomi h2 {
-                text-align: center;
-                font-size: .41rem;
-            }
-            
-            .part-aomi h3 {
-                font-size: .29rem;
-                text-align: center;
-                padding-top: .1rem;
-            }
-            
-            .part-aomi ul {
-                margin: .45rem 0 .19rem 1.65rem;
-            }
-            
-            .part-aomi li {
-                font-size: .29rem;
-                line-height: .43rem;
-                color: #000;
-                background: url(toutiao/images/dot.png) left center no-repeat;
-                background-size: .23rem .23rem;
-                padding-left: .3rem;
-            }
-            
-            .part-aomi li:nth-child(2n) {
-                margin-bottom: .4rem;
-            }
-            
-            .part-aomi ul+img {
-                margin: .49rem 0 0 0;
-            }
-            
-            .part p {
-                margin: 0 .23rem;
-                line-height: .46rem;
-                letter-spacing: .04rem;
-            }
-            
-            .part-title {
-                font-size: .45rem;
-                line-height: .55rem;
-                color: #f00;
-                font-weight: bold;
-                text-align: center;
-                margin: .16rem 0;
-            }
-            
-            .part-title2 {
-                font-size: .35rem;
-                color: #f00;
-                font-family: '黑体', 'microsoft Yahei';
-                padding: .38rem 0 .24rem 0;
-            }
-            
-            .part2 {}
-            
-            .title-k {
-                width: 5.93rem;
-                height: .69rem;
-                background: url(toutiao/images/title_kuang2.png) center center no-repeat;
-                background-size: contain;
-                padding: .1rem 0 0 .4rem;
-                margin: .2rem auto;
-                font-size: .33rem;
-                font-weight: bold;
-            }
-            
-            .title-k span {
-                font-size: .37rem;
-            }
-            
-            .part-promise {
-                position: relative;
-            }
-            
-            .part-promise p {
-                position: absolute;
-                font-family: '黑体';
-                font-size: .42rem;
-                line-height: .68rem;
-                color: #ff0909;
-                letter-spacing: 0;
-                bottom: .1rem;
-                left: 0;
-                padding: 0 0 0 .24rem;
-                z-index: 1;
-                animation: wordChange 4s infinite;
-                -webkit-animation: wordChange 4s infinite;
-            }
-            
-            @keyframes wordChange {
-                0% {
-                    color: #f00;
-                }
-                40% {
-                    color: #f00;
-                }
-                50% {
-                    color: #f4fc08;
-                }
-                100% {
-                    color: #f4fc08;
-                }
-            }
-            
-            @-webkit-keyframes wordChange {
-                0% {
-                    color: #f00;
-                }
-                40% {
-                    color: #f00;
-                }
-                50% {
-                    color: #f4fc08;
-                }
-                100% {
-                    color: #f4fc08;
-                }
-            }
-            
-            .consult {
-                width: 100%;
-                height: 1.11rem;
-                background: url(http://img.qiwanfan.com/toutiao/images/tel_bg.png) 0 0 no-repeat;
-                background-size: 100% 1.11rem;
-                text-align: center;
-                font-size: .52rem;
-                line-height: 1.11rem;
-                color: #fff;
-                margin-top: .2rem;
-            }
-            
-            .consult a {
-                display: block;
-                color: #fff;
-            }
-            
-            .part-promise .consult {
-                margin-top: 0;
-            }
-            
-            .qding {
-                text-align: center;
-                padding-top: .3rem;
-            }
-            
-            .qding p {
-                display: inline-block;
-                font-size: .5rem;
-                font-weight: bold;
-                line-height: .94rem;
-                color: #f00;
-                border-bottom: 1px solid #383838;
-                text-align: center;
-            }
-            
-            form {
-                padding: 0 .3rem;
-            }
-            
-            form input[type='text'] {
-                width: 100%;
-                border: 1px solid #c4c4c4;
-                height: .96rem;
-                border-radius: .05rem;
-                padding-left: .1rem;
-            }
-            
-            .form-group {
-                margin: .4rem 0;
-            }
-            
-            .formhead {
-                text-align: left;
-                margin-bottom: .1rem;
-            }
-            
-            .check1>label>input {
-                vertical-align: middle;
-            }
-            
-            .formhead>i {
-                color: #f00;
-                margin-right: 0.2rem;
-            }
-            
-            .form-group label {
-                display: block;
-                font-size: .3rem;
-                margin: .2rem 0;
-            }
-            
-            .form-group:nth-child(1) label input {
-                display: none;
-            }
-            
-            .form-group label span {
-                width: 70%;
-                border: 1px solid #ccc;
-                height: .61rem;
-                line-height: .61rem;
-                display: inline-block;
-                border-radius: .15rem;
-                text-align: center;
-            }
-            
-            .form-group input:checked+span {
-                border-color: #f00;
-                color: #f00;
-            }
-            
-            .tc {
-                text-align: center;
-            }
-            
-            .apply {
-                margin: .35rem 0 0 .3rem;
-            }
-            
-            .apply dt {
-                font-size: .4rem;
-                font-weight: bold;
-            }
-            
-            .apply dd {
-                font-size: .32rem;
-                line-height: .5rem;
-                margin-top: .1rem;
-            }
-            
-            .apply dd strong {
-                font-size: .35rem;
-            }
-            
-            .half-activity {
-                border-top: 1px solid #707070;
-                font-size: .3rem;
-                font-weight: bold;
-                line-height: .4rem;
-                text-align: center;
-                margin: .2rem .32rem 0;
-                padding-top: .14rem;
-            }
-            
-            .surprise h4 {
-                border: 1px solid #000;
-                height: .87rem;
-                line-height: .87rem;
-                font-size: .54rem;
-                margin: .41rem .2rem 0;
-                text-align: center;
-            }
-            
-            .tong-lun {
-                border: 1px dashed #222;
-                font-size: .32rem;
-                line-height: .45rem;
-                padding: .1rem 0 .1rem .1rem;
-                margin: .4rem .53rem .44rem;
-            }
-        </style>
-    </head>
 
-    <body>
-        <!--content-->
-        <!--content-->
-        <header class="header">
-            <img src="toutiao/images/second_img/second_top.png" />
-        </header>
-        <section class="main">
-            <div class="part-aomi">
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content1.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content2.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content2_img.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <div class="consult">
-                    <a href="tel:4008071977">半价抢订： 400-807-1977</a>
-                </div>
-                <!--表单-->
-                <form class="clear" id="form2" name="form2">
-                    <div class="form-group">
-                        <div class="formhead">
-                            产品
-                            <i>*</i>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                            <input checked="checked" type="radio" id="radio1" name="check1" value="1"><span>299元 10包(体验装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio2" name="check1" value="2"><span>598元 20包(周期装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio3" name="check1" value="3"><span>897元 30包(疗程装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio4" name="check1" value="4"><span>1196元 40包(巩固装)</span>
-                        </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            姓名
-                            <i>*</i>
-                        </div>
-                        <label>
-                            <input type="text" name="name" id="name1" maxlength="6" placeholder="请输入小于6位的汉字或字母" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            手机
-                            <i>*</i>
-                        </div>
-                        <label>
-                            <input type="text" name="phone" id="phone1" placeholder="请输入手机号" />
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            地区
-                            <i>*</i>
-                        </div>
-                        <div id="dropdown">
-                            <div>
-                                <select id="eprovinceName" name="provinceName">
-                                </select>
-                            </div>
-                            <div>
-                                <select id="ecityName" name="cityName">
-                                </select>
-                            </div>
-                            <div>
-                                <select id="edistrictName" name="districtName">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            地址
-                            <i>*</i>
-                        </div>
-                        <label>
-                            <input type="text" name="地址" id="site1" placeholder="请输入地址" />
-                        </label>
-                    </div>
-                    <input type="button" name="" id="refer1" class="refer" value="立即提交" />
-                </form>
-                <!--表单END-->
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content3.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content4.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <div class="consult">
-                    <a href="tel:4008071977">半价抢订： 400-807-1977</a>
-                </div>
-                <!--表单-->
-                <form class="clear" id="form3" name="form3">
-                    <div class="form-group">
-                        <div class="formhead">
-                            产品
-                            <i>*</i>
-                        </div>
-                        <div class="form-group">
-                            <label>
-                            <input checked="checked" type="radio" id="radio1" name="check1" value="1"><span>299元 10包(体验装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio2" name="check1" value="2"><span>598元 20包(周期装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio3" name="check1" value="3"><span>897元 30包(疗程装)</span>
-                        </label>
-                            <label>
-                            <input type="radio" id="radio4" name="check1" value="4"><span>1196元 40包(巩固装)</span>
-                        </label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            姓名
-                            <i>*</i>
-                        </div>
-                        <label>
-                        <input type="text" name="name" id="name1" maxlength="6" placeholder="请输入小于6位的汉字或字母" />
-                    </label>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            手机
-                            <i>*</i>
-                        </div>
-                        <label>
-                        <input type="text" name="phone" id="phone1" placeholder="请输入手机号" />
-                    </label>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            地区
-                            <i>*</i>
-                        </div>
-                        <div id="dropdown">
-                            <div>
-                                <select id="eprovinceName" name="provinceName">
-                                </select>
-                            </div>
-                            <div>
-                                <select id="ecityName" name="cityName">
-                                </select>
-                            </div>
-                            <div>
-                                <select id="edistrictName" name="districtName">
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="formhead">
-                            地址
-                            <i>*</i>
-                        </div>
-                        <label>
-                        <input type="text" name="地址" id="site1" placeholder="请输入地址" />
-                    </label>
-                    </div>
-                    <input type="button" name="" id="refer1" class="refer" value="立即提交" />
-                </form>
-                <!--表单END-->
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content5.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-                <p class="tc">
-                    <img src="toutiao/images/second_img/second_content6.png" alt="" style="width:6.7rem;margin-top: .2rem;">
-                </p>
-            </div>
-            <div class="consult">
-                <a href="tel:4008071977">半价抢订： 400-807-1977</a>
-            </div>
+    input[type='text'],
+    input[type='button'],
+    select {
+        -webkit-appearance: none;
+    }
 
-            <div class="part">
-                <img src="toutiao/images/16.jpg" alt="">
-            </div>
-            <div class="part part-promise">
-                <img src="http://img.qiwanfan.com/toutiao/images/second_5.jpg" alt="">
-                <!-- <img style="position: absolute;bottom: 0;left: 0;padding: 0 10% 0 4%; z-index: 1;" src="http://img.qiwanfan.com/toutiao/images/promise.gif"> -->
-                <p>承诺一：验货三天，无效全退！！
-                    <br>承诺二：原方原剂，不过敏见效快</p>
-            </div>
-            <div class="part">
-                <h3></h3>
-                <p></p>
-            </div>
-        </section>
-        <div class="qding">
-            <p>现在半价 立即抢订</p>
-        </div>
-        <!--表单-->
-        <form class="clear" id="form1" name="form1">
-            <div class="form-group">
-                <div class="formhead">
-                    产品
-                    <i>*</i>
-                </div>
-                <div class="form-group">
-                    <label>
-                    <input checked="checked" type="radio" id="radio1" name="check1" value="1"><span>299元 10包(体验装)</span>
-                </label>
-                    <label>
-                    <input type="radio" id="radio2" name="check1" value="2"><span>598元 20包(周期装)</span>
-                </label>
-                    <label>
-                    <input type="radio" id="radio3" name="check1" value="3"><span>897元 30包(疗程装)</span>
-                </label>
-                    <label>
-                    <input type="radio" id="radio4" name="check1" value="4"><span>1196元 40包(巩固装)</span>
-                </label>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="formhead">
-                    姓名
-                    <i>*</i>
-                </div>
-                <label>
-                <input type="text" name="name" id="name1" maxlength="6" placeholder="请输入小于6位的汉字或字母" />
-            </label>
-            </div>
-            <div class="form-group">
-                <div class="formhead">
-                    手机
-                    <i>*</i>
-                </div>
-                <label>
-                <input type="text" name="phone" id="phone1" placeholder="请输入手机号" />
-            </label>
-            </div>
-            <div class="form-group">
-                <div class="formhead">
-                    地区
-                    <i>*</i>
-                </div>
-                <div id="dropdown">
-                    <div>
-                        <select id="eprovinceName" name="provinceName">
-                        </select>
-                    </div>
-                    <div>
-                        <select id="ecityName" name="cityName">
-                        </select>
-                    </div>
-                    <div>
-                        <select id="edistrictName" name="districtName">
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="formhead">
-                    地址
-                    <i>*</i>
-                </div>
-                <label>
-                <input type="text" name="地址" id="site1" placeholder="请输入地址" />
-            </label>
-            </div>
-            <input type="button" name="" id="refer1" class="refer" value="立即提交" />
-        </form>
-        <!--表单END-->
-        <div class="bcon">
-            <h1>
-            <b>订单实时播报</b>
-        </h1>
-            <!-- 代码开始 -->
-            <div class="list_lh" style="height: 264px;">
-                <ul>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">李*[182****5633]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">天津</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" class="a_blue">华祖神-督脉灸1盒299元</a>
-                            <span>两分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">王*[177****6217]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">北京</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸4盒1196元</a>
-                            <span>半小时前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">赵*[181****5314]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">宁夏</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
-                            <span>12分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">王*[136****7246]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">浙江</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
-                            <span>5分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">钱*[159****7182]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">哈尔滨</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸2盒598元</a>
-                            <span>5分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">夏*[133***5526]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">江西</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
-                            <span>10分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">陈*[159****3922]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">上海</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸2盒598元</a>
-                            <span>10分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">朱*[182****3365]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">四川</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
-                            <span>14分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">孙*[177****2155]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">福建</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
-                            <span>5分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">李*[134****5342]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">郑州</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
-                            <span>1分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">夏*[159****3922]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">宁夏</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
-                            <span>1分钟前</span>
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank">贺*[171****3522]</a>
-                            <a href="javascript:void(0);" target="_blank" class="btn_lh">广东</a>
-                            <em>订购</em>
-                        </p>
-                        <p>
-                            <a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸4盒1196元</a>
-                            <span>3分钟前</span>
-                        </p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- 代码结束 -->
-        <footer>
-            <a href="#form1" class="leftbox"></a>
-            <a href="tel:4008071977" class="rightbox"></a>
-        </footer>
-        <!--阅读量-->
-        <p style=" margin-bottom: .42rem;padding-left: 5%;font-size: .24rem;color: #867e7e;">阅读 5214356
-            <img src="http://img.qiwanfan.com/toutiao/images/like-sm.jpg" style="width: .32rem; height:.31rem;display: inline-block;vertical-align: middle;" />95412</p>
-        <!--评论自切换-->
-        <div class="container">
-            <header>
-                <h1>患者留言</h1>
-            </header>
-            <div class="main">
-                <div id="cbp-qtrotator" class="cbp-qtrotator">
-                    <div class="cbp-qtcontent">
-                        <div class="clear">
-                            <div class="cbp_img1">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>幸福到</h4>
-                                <p>一开始贴感觉特别好，开始很凉爽像夏天喝了冰镇汽水一样，后来慢慢发热，刺激经络，很舒服，贴了几天感觉就慢慢变弱了，基本上就是贴20个小时换一贴，想不起来揭，而且后背贴的地方起小红疙瘩，感觉最好不要长时间贴，贴一晚上白天揭掉就好了.</p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>24588</span>
-                            </div>
-                        </div>
-                        <div class="clear">
-                            <div class="cbp_img2">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>一生平安</h4>
-                                <p>我是强直性脊柱炎，严重到不能站立了，老婆 对我不离不弃，天天在打听寻找给我治病的方 法，功夫不负有心人，让我们遇见了督脉灸，我已经好了快一年了，我们全家都感谢督脉灸。 </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>18657</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-qtcontent">
-                        <div class="clear">
-                            <div class="cbp_img3">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>平安果</h4>
-                                <p>督脉灸果然名不虚传，治好了我5年的风湿关 节炎！ </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>15496</span>
-                            </div>
-                        </div>
-                        <div class="clear">
-                            <div class="cbp_img4">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>知足常乐</h4>
-                                <p>我患风湿关节炎快10年了，手脚关节变形严 重，用同仁堂祛湿寒老方子治疗了不到半年， 我现在关节灵活的在电脑一分钟可以打40几 个字了，感谢督脉灸。 </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>14572</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-qtcontent">
-                        <div class="clear">
-                            <div class="cbp_img5">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>无畏</h4>
-                                <p>效果很好，之前担心被骗，现在贴了15天， 效果比期望的还快，督脉灸果然是良心产 品！ </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>12387</span>
-                            </div>
-                        </div>
-                        <div class="clear">
-                            <div class="cbp_img6">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>溺水三千</h4>
-                                <p>只想说，病在自己身上，信者医之，我老妈多年腰椎间盘突出，后来又有肩周炎。用督脉灸祛湿寒老方子4疗程全好了，刚开始我也不信因为我带我妈到大医院看过，看来不得不相信事实，感谢督脉灸还我妈健康。
-                                </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>10686</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="cbp-qtcontent">
-                        <div class="clear">
-                            <div class="cbp_img7">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>一休</h4>
-                                <p>得到了督脉灸很大的帮助，有问题可以咨询督脉灸医生，他分享很多养生小知识， 一定可以帮到你的。 </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>8633</span>
-                            </div>
-                        </div>
-                        <div class="clear">
-                            <div class="cbp_img8">
-                            </div>
-                            <div class="cbp_note">
-                                <h4>媚儿</h4>
-                                <p>治疗一个月的，刚开始用了一个星期， 晚上关节不疼了睡觉好香。现在关节完全没 有问题了，朋友们都说我脸色比前段时间好 了。 </p>
-                            </div>
-                            <div class="cbp_Like">
-                                <img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
-                                <span>14572</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--代码结束-->
-        <script src="toutiao/js/jquery-1.11.3.min.js"></script>
-        <script type="text/javascript" src="toutiao/js/layer/layer.js"></script>
-        <script src="toutiao/js/modernizr.custom.js"></script>
-        <script src="toutiao/js/jquery.cbpQTRotator.min.js"></script>
-    <script type="text/javascript">
+    .clear:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+
+    img {
+        width: 100%;
+        border: none;
+        vertical-align: top;
+    }
+
+    footer>a {
+        float: left;
+        width: 50%
+    }
+
+    footer>a>img {
+        width: 100%;
+    }
+
+    footer {
+        max-width: 750px;
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        width: 100%;
+        z-index: 999;
+    }
+
+    .leftbox,
+    .rightbox {
+        width: 50%;
+        height: 1.12rem;
+        display: inline-block;
+    }
+
+    .leftbox {
+        background: url("http://img.qiwanfan.com/toutiao/images/left.gif") no-repeat;
+        background-size: 100% 100%
+    }
+
+    .rightbox {
+        background: url("http://img.qiwanfan.com/toutiao/images/right.gif") no-repeat;
+        background-size: 100% 100%
+    }
+    /*********************************************** 表单 ************************************************/
+
+    .subtraction,
+    .add {
+        float: left;
+        text-align: center;
+        width: 1.3rem;
+        height: 2rem;
+        border: 0;
+        background: #fff;
+        border-radius: 5px;
+    }
+
+    .content-block {
+        float: left;
+        width: 79%;
+    }
+
+    .refer {
+        display: block;
+        width: 100%;
+        height: .96rem;
+        border-radius: 5px;
+        background: #f00;
+        color: #fff;
+        text-align: center;
+        line-height: .96rem;
+        font-size: .36rem;
+        margin: .2rem auto;
+        border: 0;
+    }
+
+    .cbp_img1 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 0 0;
+    }
+
+    .cbp_img2 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 14.3% 0;
+    }
+
+    .cbp_img3 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 28.6% 0;
+    }
+
+    .cbp_img4 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 42.9% 0;
+    }
+
+    .cbp_img5 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 57.2% 0;
+    }
+
+    .cbp_img6 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 71.5% 0;
+    }
+
+    .cbp_img7 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 85.8% 0;
+    }
+
+    .cbp_img8 {
+        background: url("http://img.qiwanfan.com/toutiao/images/icon.png") no-repeat 100% 0;
+    }
+
+    .cbp_img1,
+    .cbp_img2,
+    .cbp_img3,
+    .cbp_img4,
+    .cbp_img5,
+    .cbp_img6,
+    .cbp_img7,
+    .cbp_img8 {
+        float: left;
+        width: 15%;
+        margin-left: 5%;
+        background-size: cover;
+        padding-top: 15%;
+    }
+    /*外部CSS*/
+
+    .cbp-qtrotator {
+        position: relative;
+        margin: .5rem auto;
+        /*max-width: 800px;*/
+        width: 100%;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent {
+        position: absolute;
+        /*min-height: 200px;*/
+        border-top: 1px solid #f4f4f4;
+        border-bottom: 1px solid #f4f4f4;
+        padding: .5rem 0 .8rem;
+        top: 0;
+        z-index: 0;
+        opacity: 0;
+        width: 100%;
+    }
+
+    .no-js .cbp-qtrotator .cbp-qtcontent {
+        border-bottom: none;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent.cbp-qtcurrent,
+    .no-js .cbp-qtrotator .cbp-qtcontent {
+        position: relative;
+        z-index: 100;
+        pointer-events: auto;
+        opacity: 1;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent:before,
+    .cbp-qtrotator .cbp-qtcontent:after {
+        content: " ";
+        display: table;
+    }
+
+    .cbp-qtrotator .cbp-qtcontent:after {
+        clear: both;
+    }
+
+    .cbp-qtprogress {
+        position: absolute;
+        background: #47a3da;
+        height: 1px;
+        width: 0%;
+        top: 0;
+        z-index: 1000;
+    }
+
+    .cbp-qtrotator blockquote {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container>header {
+        border-bottom: 1px dashed #867e7e;
+        position: relative;
+    }
+
+    .container>header>h1 {
+        text-align: center;
+        padding: 0 .3rem 0 .3rem;
+        font-size: .4rem;
+        font-weight: bold;
+        color: #867e7e;
+        display: inline-block;
+        background: #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .cbp_img,
+    .cbp_note,
+    .cbp_Like {
+        float: left;
+    }
+
+    .cbp_img {
+        width: 20%;
+    }
+
+    .cbp_img>img {
+        width: 80%;
+        float: right;
+    }
+
+    .cbp_note {
+        width: 65%;
+    }
+
+    .cbp_note>h4 {
+        font-size: .28rem;
+        padding-left: 5%;
+        margin-bottom: 0.12rem;
+        font-weight: bold;
+    }
+
+    .cbp_note>p {
+        font-size: .24rem;
+        line-height: .36rem;
+        padding: 0 5% 0 5%;
+    }
+
+    .cbp_Like {
+        width: 15%;
+    }
+
+    .cbp_Like>img {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%;
+    }
+
+    .cbp_Like>span {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: .28rem;
+    }
+
+    .cbp-qtcontent>div {
+        min-height: 2.5rem;
+    }
+    /*外部CSS*/
+    /* CSS Document */
+
+    input,
+    button,
+    select,
+    textarea {
+        outline: none;
+    }
+
+    select {
+        height: .96rem;
+        width: 32%;
+        border-radius: 5px;
+        background: none;
+    }
+
+    ul,
+    li,
+    dl,
+    ol {
+        list-style: none;
+    }
+
+    a {
+        color: #666;
+        text-decoration: none;
+    }
+
+    .box {
+        width: 980px;
+        margin: 0 auto;
+    }
+
+    .bcon {
+        width: 80%;
+        border: 1px solid #eee;
+        margin: 30px auto;
+    }
+
+    .bcon h1 {
+        border-bottom: 1px solid #eee;
+        padding: 0 10px;
+    }
+
+    .bcon h1 b {
+        font: bold 14px/40px '宋体';
+        border-top: 2px solid #3492D1;
+        padding: 0 8px;
+        margin-top: -1px;
+        display: inline-block;
+    }
+
+    .list_lh {
+        height: 400px;
+        overflow: hidden;
+    }
+
+    .list_lh li {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .list_lh li.lieven {
+        background: #F0F2F3;
+    }
+
+    .list_lh li p {
+        height: 24px;
+        line-height: 24px;
+    }
+
+    .list_lh li p a {
+        float: left;
+    }
+
+    .list_lh li p em {
+        width: 80px;
+        font: normal 12px/24px Arial;
+        color: #FF3300;
+        float: right;
+        display: inline-block;
+    }
+
+    .list_lh li p span {
+        color: #999;
+        float: right;
+    }
+
+    .list_lh li p a.btn_lh {
+        background: #28BD19;
+        height: 17px;
+        line-height: 17px;
+        color: #fff;
+        padding: 0 5px;
+        margin-top: 4px;
+        display: inline-block;
+        float: right;
+    }
+
+    .btn_lh:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btm p {
+        font: normal 12px/24px 'Microsoft YaHei';
+        text-align: center;
+    }
+
+    video {
+        display: block;
+        width: 90%;
+        margin: .1rem auto;
+    }
+
+    #dropdown:after {
+        content: "";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        height: 0;
+    }
+
+    #dropdown div {
+        float: left;
+        width: 32%;
+        margin: 0 .5%;
+        position: relative;
+    }
+
+    #dropdown div:after {
+        content: "";
+        color: #c4c4c4;
+        width: 0;
+        height: 0;
+        font-size: 0;
+        line-height: 0;
+        border-style: solid dashed dashed dashed;
+        border-width: 5px;
+        border-color: #000 transparent transparent transparent;
+        position: absolute;
+        right: 8px;
+        top: 20px;
+    }
+
+    #dropdown div select {
+        width: 100%;
+        border: 1px solid #c4c4c4;
+        padding-left: 5px;
+    }
+
+    @media screen and (min-width: 320px) {
+        html {
+            font-size: 43px;
+        }
+    }
+
+    @media screen and (min-width: 360px) {
+        html {
+            font-size: 48px;
+        }
+    }
+
+    @media screen and (min-width: 375px) {
+        html {
+            font-size: 50px;
+        }
+    }
+
+    @media screen and (min-width: 414px) {
+        html {
+            font-size: 55px;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: normal;
+    }
+
+    body {
+        background: url(toutiao/images/sec_bg39.png) center 0 no-repeat;
+        background-size: 7.5rem 7.09rem;
+        font-family: PingFang SC, Lantinghei SC, Helvetica Neue, Helvetica, Arial, Microsoft YaHei, "sans-serif";
+        -webkit-font-smoothing: antialiased;
+        font-size: .33rem;
+        color: #000;
+        max-width: 750px;
+        margin: 0 auto;
+    }
+
+    .fb {
+        font-weight: bold;
+    }
+
+    .t2em {
+        text-indent: 2em;
+    }
+
+    .header h1 {
+        font-size: .83rem;
+        font-weight: bold;
+        line-height: 1.2rem;
+        color: #000;
+        text-align: center;
+        letter-spacing: .04rem;
+    }
+
+    .header h1 span {
+        color: #f00;
+        font-size: .83rem;
+    }
+
+    .red {
+        color: #f00;
+    }
+
+    .part-aomi {
+        font-size: .29rem;
+        line-height: .42rem;
+        padding: .2rem 0 0;
+    }
+
+    .part-aomi p {
+        margin-bottom: .1rem;
+    }
+
+    .part-aomi h2 {
+        text-align: center;
+        font-size: .41rem;
+    }
+
+    .part-aomi h3 {
+        font-size: .29rem;
+        text-align: center;
+        padding-top: .1rem;
+    }
+
+    .part-aomi ul {
+        margin: .45rem 0 .19rem 1.65rem;
+    }
+
+    .part-aomi li {
+        font-size: .29rem;
+        line-height: .43rem;
+        color: #000;
+        background: url(toutiao/images/dot.png) left center no-repeat;
+        background-size: .23rem .23rem;
+        padding-left: .3rem;
+    }
+
+    .part-aomi li:nth-child(2n) {
+        margin-bottom: .4rem;
+    }
+
+    .part-aomi ul+img {
+        margin: .49rem 0 0 0;
+    }
+
+    .part p {
+        margin: 0 .23rem;
+        line-height: .46rem;
+        letter-spacing: .04rem;
+    }
+
+    .part-title {
+        font-size: .45rem;
+        line-height: .55rem;
+        color: #f00;
+        font-weight: bold;
+        text-align: center;
+        margin: .16rem 0;
+    }
+
+    .part-title2 {
+        font-size: .35rem;
+        color: #f00;
+        font-family: '黑体', 'microsoft Yahei';
+        padding: .38rem 0 .24rem 0;
+    }
+
+    .part2 {}
+
+    .title-k {
+        width: 5.93rem;
+        height: .69rem;
+        background: url(toutiao/images/title_kuang2.png) center center no-repeat;
+        background-size: contain;
+        padding: .1rem 0 0 .4rem;
+        margin: .2rem auto;
+        font-size: .33rem;
+        font-weight: bold;
+    }
+
+    .title-k span {
+        font-size: .37rem;
+    }
+
+    .part-promise {
+        position: relative;
+    }
+
+    .part-promise p {
+        position: absolute;
+        font-family: '黑体';
+        font-size: .42rem;
+        line-height: .68rem;
+        color: #ff0909;
+        letter-spacing: 0;
+        bottom: .1rem;
+        left: 0;
+        padding: 0 0 0 .24rem;
+        z-index: 1;
+        animation: wordChange 4s infinite;
+        -webkit-animation: wordChange 4s infinite;
+    }
+
+    @keyframes wordChange {
+        0% {
+            color: #f00;
+        }
+        40% {
+            color: #f00;
+        }
+        50% {
+            color: #f4fc08;
+        }
+        100% {
+            color: #f4fc08;
+        }
+    }
+
+    @-webkit-keyframes wordChange {
+        0% {
+            color: #f00;
+        }
+        40% {
+            color: #f00;
+        }
+        50% {
+            color: #f4fc08;
+        }
+        100% {
+            color: #f4fc08;
+        }
+    }
+
+    .consult {
+        width: 100%;
+        height: 1.11rem;
+        background: url(http://img.qiwanfan.com/toutiao/images/tel_bg.png) 0 0 no-repeat;
+        background-size: 100% 1.11rem;
+        text-align: center;
+        font-size: .52rem;
+        line-height: 1.11rem;
+        color: #fff;
+        margin-top: .2rem;
+    }
+
+    .consult a {
+        display: block;
+        color: #fff;
+    }
+
+    .part-promise .consult {
+        margin-top: 0;
+    }
+
+    .qding {
+        text-align: center;
+        padding-top: .3rem;
+    }
+
+    .qding p {
+        display: inline-block;
+        font-size: .5rem;
+        font-weight: bold;
+        line-height: .94rem;
+        color: #f00;
+        border-bottom: 1px solid #383838;
+        text-align: center;
+    }
+
+    form {
+        padding: 0 .3rem;
+    }
+
+    form input[type='text'] {
+        width: 100%;
+        border: 1px solid #c4c4c4;
+        height: .96rem;
+        border-radius: .05rem;
+        padding-left: .1rem;
+    }
+
+    .form-group {
+        margin: .4rem 0;
+    }
+
+    .formhead {
+        text-align: left;
+        margin-bottom: .1rem;
+    }
+
+    .check1>label>input {
+        vertical-align: middle;
+    }
+
+    .formhead>i {
+        color: #f00;
+        margin-right: 0.2rem;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: .3rem;
+        margin: .2rem 0;
+    }
+
+    .form-group:nth-child(1) label input {
+        display: none;
+    }
+
+    .form-group label span {
+        width: 70%;
+        border: 1px solid #ccc;
+        height: .61rem;
+        line-height: .61rem;
+        display: inline-block;
+        border-radius: .15rem;
+        text-align: center;
+    }
+
+    .form-group input:checked+span {
+        border-color: #f00;
+        color: #f00;
+    }
+
+    .tc {
+        text-align: center;
+    }
+
+    .apply {
+        margin: .35rem 0 0 .3rem;
+    }
+
+    .apply dt {
+        font-size: .4rem;
+        font-weight: bold;
+    }
+
+    .apply dd {
+        font-size: .32rem;
+        line-height: .5rem;
+        margin-top: .1rem;
+    }
+
+    .apply dd strong {
+        font-size: .35rem;
+    }
+
+    .half-activity {
+        border-top: 1px solid #707070;
+        font-size: .3rem;
+        font-weight: bold;
+        line-height: .4rem;
+        text-align: center;
+        margin: .2rem .32rem 0;
+        padding-top: .14rem;
+    }
+
+    .surprise h4 {
+        border: 1px solid #000;
+        height: .87rem;
+        line-height: .87rem;
+        font-size: .54rem;
+        margin: .41rem .2rem 0;
+        text-align: center;
+    }
+
+    .tong-lun {
+        border: 1px dashed #222;
+        font-size: .32rem;
+        line-height: .45rem;
+        padding: .1rem 0 .1rem .1rem;
+        margin: .4rem .53rem .44rem;
+    }
+    </style>
+</head>
+<body>
+<header class="header">
+<h1>
+拔<span>寒</span> 拔<span>湿</span> 拔<span>骨痛</span><br>
+<span>骨</span>里拔<span>刀</span>用<span>怪</span>招
+</h1>
+</header>
+<section class="main">
+<div class="part-aomi">
+<h2><span class="red">〖</span>前言<span class="red">〗</span></h2>
+<ul>
+<li>见过各种各样的膏贴</li>
+<li>但您肯定没见过督脉灸</li>
+<li>用过了百种治骨的方法</li>
+<li>但您肯定没用过督脉灸</li>
+<li>拔寒、拔湿、拔骨痛</li>
+<li>行二脉，通百穴，入骨三分</li>
+</ul>
+<p class="tc">
+<img src="toutiao/images/second391.png" alt="" style="width:6.7rem; height: 3.92rem; margin-top: .2rem;">
+</p>
+<dl class="apply">
+<dt>督脉灸适用于：</dt>
+<dd>
+<p><strong>颈椎痛</strong>(头晕、恶心、肩疼、上肢痛、手麻)</p>
+<p><strong>腰椎痛</strong>(腰酸、腰无力、腿痛、腿麻、行走不便)</p>
+<p><strong>关节炎</strong>(半月板损伤、膑骨软化症、上下台阶腿 软、坐起疼痛、关节无力)
+</p>
+<p><strong>肩周炎</strong>(手臂抬起困难、肩部疼痛)</p>
+<p><strong>网球肘</strong>(肘部疼痛、拿东西无力)</p>
+<p><strong>跌打损伤</strong>(扭伤、脚崴、肌肉肌腱拉伤)</p>
+</dd>
+</dl>
+<div class="half-activity">
+为回馈上市7年来，广大消费者的厚爱
+<br> 特推出半价抢购活动
+<br> 每天
+<span class="red">100名</span>
+</div>
+<div class="consult"><a href="tel:4008071977">半价抢订： 400-807-1977</a></div>
+</div>
+<div class="surprise">
+<h4>神奇督灸 督行二脉 骨里拔刀</h4>
+<p class="tong-lun">《黄帝内经素问举痛论》:
+<br> 痛则不通!通则不痛!
+<br> 督脉灸与普通膏贴相比，最大区别在于
+<br> “督”行二脉，疏通大脉29穴，
+<br> 通，通，通则不痛!
+<br> 活络督脉四路膀胱经76穴，
+<br> 通，通，通则不痛!
+</p>
+<p class="tc"><img src="toutiao/images/dmj.png" alt="" style="width:5.75rem; height: 3.72rem;"></p>
+<p style="font-size: .37rem; font-weight: bold;padding:.33rem 0 .45rem .37rem;"><span style="font-size: .5rem;">大督灸—</span>
+<br> 形如脊，状如椎，长如龙，覆盖全督脉
+</p>
+<p class="tc"><img src="toutiao/images/dmj_s.png" alt="" style="width:7.08rem; height: 2.04rem;"></p>
+<div class="part" style="padding:.5rem 0;">
+<p class="t2em"> <span class="red fb">颈椎痛</span>——脖子酸、痛、转动不自如， 头晕、恶心等症，贴用当天疼痛缓解，
+<span class="red">三天</span> 酸胀消失，疼痛不再，活动自如，
+<span class="red">使用一月</span>， 头晕恶心不再出现，疼痛不反复。
+</p>
+<p class="t2em" style="padding-top: .46rem;"><span class="red fb">腰突腰椎痛</span>——疼痛难忍，难以直立， 行走受限，下肢麻木等症，贴用当天疼痛减 轻，酸胀消失，
+<span class="red">贴用三天</span>，疼痛消失，直立 自如，行走正常。
+<span class="red">贴用一月</span>，能走能跑，扭 腰自如，疼痛不再反复。
+</p>
+</div>
+<p><img src="toutiao/images/tong.png" alt=""></p>
+<p style="font-size: .3rem; line-height: .76rem; padding:0 0 0 .47rem;"><strong>如果您正受颈椎痛、腰椎痛、关节炎等骨病折磨</strong>
+<br>拨打下方电话，享受前100名半价体验活动</p>
+<div class="consult"><a href="tel:4008071977">半价抢订： 400-807-1977</a></div>
+</div>
+<div class="part part2">
+<h2 style="font-size: .62rem;" class="tc">督脉灸<span class="red">三</span>大奇</h2>
+<h4 class="title-k">第一奇 督灸专利第一人</h4>
+<p>她，从一位普普普通通的腰椎间盘突出 的
+<span class="red">病人</span>，到成为<span class="red">治骨高人</span>！她的求医之路， 遍及京城沪上，最终机缘巧合，在西南苗疆 得一位老苗医出手，药到病除！她无数次拜 访，诚心打动了这位老苗医，向她口授了这 一治骨奇方；她对患者感同身受，多方奔走 ，请药厂代加工，立志用奇方造福更多同病 相怜的病友。她对工艺、对产品质量的要求 达到吹毛求疵的地步，以至于再没有药厂愿 意接这订单。无奈之下，她变卖家当，抵押 房产，拿到贷款后自办药厂。
+<span class="red">七年间</span>，无数 次失败，无数次试验，传承苗药奇方的大督 灸终于横空出世！
+<span class="red">造福四方颈腰骨病患者。</span></p>
+<p class="tc">
+<img src="toutiao/images/cxna.png" alt="" style="padding: 20px 0 0 0;width:6.6rem; height: 5.39rem;">
+</p>
+</div>
+<div class="part part2">
+<h4 class="title-k" style="height: 1.35rem; background-size: 100% 100%; text-align: right; padding-right: .4rem; line-height: .43rem; padding-top:0;"><p style="position: relative;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);">第二奇 一副督灸 三重奇效
+蒸骨拔毒 全身舒坦</p></h4>
+<p style="margin-top:.1rem;">腰椎病、颈椎病大多是因为督脉<span class="red">经络</span>不畅，阳经虚 弱，气血不调导致腰椎颈椎骨质增生、风寒内侵出 现气血淤阻、经络闭锁，活动受限，
+<span class="red">疼痛</span>不已。 而
+<span class="red">大督灸</span>采用了<span class="red">数十种</span>纯正民间<span class="red">中草方配制</span>，直接 作用于所有脊椎
+<span class="red">28个穴位</span>，让督脉随行穴位同时开 穴通脉，达到同治同效，被称为腰椎病和颈椎病的
+<span class="red">专业户</span>。</p>
+<img src="toutiao/images/chenfen.jpg" alt="" style="margin-top:.2rem;">
+</div>
+<div class="part part2">
+<h4 class="title-k" style="height: 1.35rem; background-size: 100% 100%; text-align: right; padding-right: .4rem; line-height: .43rem; padding-top: 0;"><p style="position: relative;top: 50%;-webkit-transform: translateY(-50%);transform: translateY(-50%);">第三奇 百年苗方 贴条督灸斩获国家专利</p></h4>
+<p>随后几年里，她再到苗寨拜访老苗医十几次，并<span class="red">拜
+老苗医为师</span>。征求老苗医的意愿后，她终于将这个 督灸之方，带出了苗寨，带回了武汉大都市。由于 代工质量不稳定，在朋友们多方支持下，她的研究 团队在经历了
+<span class="red">上千次实验</span>，历时7年，终于攻克工 艺难关，成功将药液、黑膏合二为一，原方原效的
+<span class="red">大督灸量产推出</span>了，并一举获得了两项国家专利， 经过
+<span class="red">8年</span>市场验证，口碑卓著！</p>
+<img src="toutiao/images/tegao.jpg" alt="" style="margin-top:.2rem;">
+<p style="font-size: .3rem; line-height: .76rem; padding:0 0 0 .24rem; letter-spacing: 0;"><strong>如果您正受颈椎痛、腰椎痛、关节炎等骨病折磨</strong>
+<br>拨打下方电话，享受前100名半价体验活动</p>
+<div class="consult"><a href="tel:4008071977">半价抢订： 400-807-1977</a></div>
+</div>
+<div class="part">
+<img src="toutiao/images/16.jpg" alt="">
+</div>
+<div class="part part-promise">
+<img src="http://img.qiwanfan.com/toutiao/images/second_5.jpg" alt="">
+<p>承诺一：验货三天，无效全退！！
+<br>承诺二：原方原剂，不过敏见效快</p>
+</div>
+<div class="part">
+<h3></h3>
+<p></p>
+</div>
+</section>
+<div class="qding">
+<p>现在半价 立即抢订</p>
+</div>
+<form class="clear" id="form1" name="form1">
+<div class="form-group">
+<div class="formhead">
+产品
+<i>*</i>
+</div>
+<div class="form-group">
+<label>
+<input checked="checked" type="radio" id="radio1" name="check1" value="1"><span>299元 10包(体验装)</span>
+</label>
+<label>
+<input type="radio" id="radio2" name="check1" value="2"><span>598元 20包(周期装)</span>
+</label>
+<label>
+<input type="radio" id="radio3" name="check1" value="3"><span>897元 30包(疗程装)</span>
+</label>
+<label>
+<input type="radio" id="radio4" name="check1" value="4"><span>1196元 40包(巩固装)</span>
+</label>
+</div>
+</div>
+<div class="form-group">
+<div class="formhead">
+姓名
+<i>*</i>
+</div>
+<label>
+<input type="text" name="name" id="name1" maxlength="6" placeholder="请输入小于6位的汉字或字母" />
+</label>
+</div>
+<div class="form-group">
+<div class="formhead">
+手机
+<i>*</i>
+</div>
+<label>
+<input type="text" name="phone" id="phone1" placeholder="请输入手机号" />
+</label>
+</div>
+<div class="form-group">
+<div class="formhead">
+地区
+<i>*</i>
+</div>
+<div id="dropdown">
+<div>
+<select id="eprovinceName" name="provinceName">
+</select>
+</div>
+<div>
+<select id="ecityName" name="cityName">
+</select>
+</div>
+<div>
+<select id="edistrictName" name="districtName">
+</select>
+</div>
+</div>
+</div>
+<div class="form-group">
+<div class="formhead">
+地址
+<i>*</i>
+</div>
+<label>
+<input type="text" name="地址" id="site1" placeholder="请输入地址" />
+</label>
+</div>
+</div>
+<input type="button" name="" id="refer1" class="refer" value="立即提交" />
+</form>
+<div class="bcon">
+<h1>
+<b>订单实时播报</b>
+</h1>
+<div class="list_lh" style="height: 264px;">
+<ul>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">李*[182****5633]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">天津</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" class="a_blue">华祖神-督脉灸1盒299元</a>
+<span>两分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">王*[177****6217]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">北京</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸4盒1196元</a>
+<span>半小时前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">赵*[181****5314]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">宁夏</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
+<span>12分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">王*[136****7246]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">浙江</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
+<span>5分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">钱*[159****7182]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">哈尔滨</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸2盒598元</a>
+<span>5分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">夏*[133***5526]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">江西</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
+<span>10分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">陈*[159****3922]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">上海</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸2盒598元</a>
+<span>10分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">朱*[182****3365]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">四川</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
+<span>14分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">孙*[177****2155]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">福建</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
+<span>5分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">李*[134****5342]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">郑州</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸3盒897元</a>
+<span>1分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">夏*[159****3922]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">宁夏</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸1盒299元</a>
+<span>1分钟前</span>
+</p>
+</li>
+<li>
+<p>
+<a href="javascript:void(0);" target="_blank">贺*[171****3522]</a>
+<a href="javascript:void(0);" target="_blank" class="btn_lh">广东</a>
+<em>订购</em>
+</p>
+<p>
+<a href="javascript:void(0);" target="_blank" class="a_blue">华祖神-督脉灸4盒1196元</a>
+<span>3分钟前</span>
+</p>
+</li>
+</ul>
+</div>
+</div>
+<footer>
+<a href="#form1" class="leftbox"></a>
+<a href="tel:4008071977" class="rightbox"></a>
+</footer>
+<p style=" margin-bottom: .42rem;padding-left: 5%;font-size: .24rem;color: #867e7e;">阅读 5214356
+<img src="http://img.qiwanfan.com/toutiao/images/like-sm.jpg" style="width: .32rem; height:.31rem;display: inline-block;vertical-align: middle;" />95412</p>
+<div class="container">
+<header>
+<h1>患者留言</h1>
+</header>
+<div class="main">
+<div id="cbp-qtrotator" class="cbp-qtrotator">
+<div class="cbp-qtcontent">
+<div class="clear">
+<div class="cbp_img1">
+</div>
+<div class="cbp_note">
+<h4>幸福到</h4>
+<p>一开始贴感觉特别好，开始很凉爽像夏天喝了冰镇汽水一样，后来慢慢发热，刺激经络，很舒服，贴了几天感觉就慢慢变弱了，基本上就是贴20个小时换一贴，想不起来揭，而且后背贴的地方起小红疙瘩，感觉最好不要长时间贴，贴一晚上白天揭掉就好了.</p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>24588</span>
+</div>
+</div>
+<div class="clear">
+<div class="cbp_img2">
+</div>
+<div class="cbp_note">
+<h4>一生平安</h4>
+<p>我是强直性脊柱炎，严重到不能站立了，老婆 对我不离不弃，天天在打听寻找给我治病的方 法，功夫不负有心人，让我们遇见了督脉灸，我已经好了快一年了，我们全家都感谢督脉灸。 </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>18657</span>
+</div>
+</div>
+</div>
+<div class="cbp-qtcontent">
+<div class="clear">
+<div class="cbp_img3">
+</div>
+<div class="cbp_note">
+<h4>平安果</h4>
+<p>督脉灸果然名不虚传，治好了我5年的风湿关 节炎！ </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>15496</span>
+</div>
+</div>
+<div class="clear">
+<div class="cbp_img4">
+</div>
+<div class="cbp_note">
+<h4>知足常乐</h4>
+<p>我患风湿关节炎快10年了，手脚关节变形严 重，用同仁堂祛湿寒老方子治疗了不到半年， 我现在关节灵活的在电脑一分钟可以打40几 个字了，感谢督脉灸。 </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>14572</span>
+</div>
+</div>
+</div>
+<div class="cbp-qtcontent">
+<div class="clear">
+<div class="cbp_img5">
+</div>
+<div class="cbp_note">
+<h4>无畏</h4>
+<p>效果很好，之前担心被骗，现在贴了15天， 效果比期望的还快，督脉灸果然是良心产 品！ </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>12387</span>
+</div>
+</div>
+<div class="clear">
+<div class="cbp_img6">
+</div>
+<div class="cbp_note">
+<h4>溺水三千</h4>
+<p>只想说，病在自己身上，信者医之，我老妈多年腰椎间盘突出，后来又有肩周炎。用督脉灸祛湿寒老方子4疗程全好了，刚开始我也不信因为我带我妈到大医院看过，看来不得不相信事实，感谢督脉灸还我妈健康。
+</p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>10686</span>
+</div>
+</div>
+</div>
+<div class="cbp-qtcontent">
+<div class="clear">
+<div class="cbp_img7">
+</div>
+<div class="cbp_note">
+<h4>一休</h4>
+<p>得到了督脉灸很大的帮助，有问题可以咨询督脉灸医生，他分享很多养生小知识， 一定可以帮到你的。 </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>8633</span>
+</div>
+</div>
+<div class="clear">
+<div class="cbp_img8">
+</div>
+<div class="cbp_note">
+<h4>媚儿</h4>
+<p>治疗一个月的，刚开始用了一个星期， 晚上关节不疼了睡觉好香。现在关节完全没 有问题了，朋友们都说我脸色比前段时间好 了。 </p>
+</div>
+<div class="cbp_Like">
+<img src="http://img.qiwanfan.com/toutiao/images/like.jpg" />
+<span>14572</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="toutiao/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="toutiao/js/layer/layer.js"></script>
+<script src="toutiao/js/modernizr.custom.js"></script>
+<script src="toutiao/js/jquery.cbpQTRotator.min.js"></script>
+<script type="text/javascript">
     $(document).ready(function() {
         $('.list_lh li:even').addClass('lieven');
     })
@@ -1388,7 +1311,7 @@
      * 获取区域
      * 被调用的地方是  页面首次加载  以及 表单提交成功之后
      */
-    function loadRegion(form) {
+    function loadRegion() {
         $.ajax({
             url: 'https://api.qiwanfan.com/v1/base/region/provinces',
             type: 'get',
@@ -1399,15 +1322,17 @@
                 for (var i = 0; i < len; i++) {
                     str += '<option class="province" value=' + data[i].id + '>' + data[i].name + '</option>'
                 };
-
-                $(form).find("select[name='provinceName']").html(str);
-                $(form).find("select[name='cityName']").html('<option class="city" value="y" selected>-选择城市-</option>');
-                $(form).find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
+                $('#eprovinceName').html(str);
+                $('#ecityName').html('<option class="city" value="y" selected>-选择城市-</option>');
+                $('#edistrictName').html('<option class="county" value="z" selected>-选择区县-</option>');
             }
         })
     }
 
     $(function() {
+        // 初始化省市区
+        loadRegion();
+
         //封装jquery mobile提示消息
         function showMsg(con) {
             layer.open({
@@ -1417,106 +1342,92 @@
             });
         }
 
-        function formHandle(form){
-            var $province = $(form).find("select[name='provinceName']"),
-                $city = $(form).find("select[name='cityName']"),
-                $district = $(form).find("select[name='districtName']");
-                
-
-            // 初始化省市区
-            loadRegion(form);
-
-            /*表单验证*/
-            $(form).find(".refer").click(function() {
-
-                var $this = $(this),
-                    $form = $this.closest("form"), 
-                    $check = $form.find($("input[name='check1']:checked")),
-                    $name = $form.find("input[name='name']"),
-                    $phone = $form.find("input[name='phone']"),
-                    $site = $form.find("input[name='地址']");         
-                if ($check.val() > 0) {
-                    if ($name.val() == "") {
-                        showMsg("请填写您的姓名")
-                        return false;
-                    } else if ($phone.val() == "") {
-                        showMsg("请输入手机号")
-                        return false;
-                    } else if (!(/^1[3|4|5|7|8][0-9]{9}$/.test($phone.val()))) {
-                        showMsg("请输入正确的手机号");
-                        $phone.focus();
-                        return false;
-                    } else if (addrId === '') {
-                        showMsg("请选择 [省份/城市/区县] 信息")
-                        return false;
-                    } else if ($site.val() == "") {
-                        showMsg("请填写详细地址")
-                        return false;
-                    }
-
-                    addr = $name.val() + ' ' + $phone.val() + ' ' + addr + ' ' + $site.val();
-                    $this.attr('disabled', true).val('提交中...');
-
-                    var subLayer = layer.open({
-                        type: 2,
-                        content: '提交中',
-                        shadeClose: false
-                    });
-
-                    $.ajax({
-                        type: 'post',
-                        url: 'https://api.qiwanfan.com/v1/te/trade/ordertoutiao',
-                        dataType: 'json',
-                        data: {
-                            deliveryAddressId: addrId,
-                            deliveryAddressCopy: addr,
-                            skuId: 7328319596527616,
-                            count: $check.val(),
-                            sellerId: 7644032041472000,
-                            sellerName: '深圳言文医药连锁有限公司-0'
-                        },
-                        success: function(data) {
-                            layer.close(subLayer);
-                            if (!data) {
-                                showMsg("下单失败!!!")
-                                return;
-                            } else {
-                                if (data.success) {
-                                    $form[0].reset();
-                                    _taq.push({ convert_id: "88826063650", event_type: "form" })
-                                    showMsg("下单成功")
-                                } else {
-                                    console.log(data.message);
-                                    showMsg("下单失败!!!")
-                                }
-                            }
-                        },
-                        error: function(XMLHttpRequest, textStatus, errorThrown) {
-                            layer.close(subLayer);
-                            showMsg("下单失败!!!")
-                        }
-                    });
-
-
-                    $this.attr('disabled', false).val('立即提交');
-
-                    loadRegion();
-                } else {
-
-                    showMsg('选择规格')
+        /*表单验证*/
+        $("#refer1").click(function() {
+            if ($("input[name='check1']:checked").val() > 0) {
+                if ($("#name1").val() == "") {
+                    showMsg("请填写您的姓名")
+                    return false;
+                } else if ($("#phone1").val() == "") {
+                    showMsg("请输入手机号")
+                    return false;
+                } else if (!(/^1[3|4|5|7|8][0-9]{9}$/.test($("#phone1").val()))) {
+                    showMsg("请输入正确的手机号");
+                    $("#phone1").focus();
+                    return false;
+                } else if (addrId === '') {
+                    showMsg("请选择 [省份/城市/区县] 信息")
+                    return false;
+                } else if ($("#site1").val() == "") {
+                    showMsg("请填写详细地址")
+                    return false;
                 }
-            })
 
-            $province.change(function() {
+                addr = $("#name1").val() + ' ' + $("#phone1").val() + ' ' + addr + ' ' + $("#site1").val();
+                $('#refer1').attr('disabled', true).val('提交中...');
+
+                var subLayer = layer.open({
+                    type: 2,
+                    content: '提交中',
+                    shadeClose: false
+                });
+
+                $.ajax({
+                    type: 'post',
+                    url: 'https://api.qiwanfan.com/v1/te/trade/ordertoutiao',
+                    dataType: 'json',
+                    data: {
+                        deliveryAddressId: addrId,
+                        deliveryAddressCopy: addr,
+                        skuId: 7328319596527616,
+                        count: $("input[name='check1']:checked").val(),
+                        sellerId: 7644032041472000,
+                        sellerName: '深圳言文医药连锁有限公司-0'
+                    },
+                    success: function(data) {
+                        layer.close(subLayer);
+                        if (!data) {
+                            showMsg("下单失败!!!")
+                            return;
+                        } else {
+                            if (data.success) {
+                                $('#form1')[0].reset();
+                                _taq.push({ convert_id: "88826063650", event_type: "form" })
+                                showMsg("下单成功")
+                            } else {
+                                console.log(data.message);
+                                showMsg("下单失败!!!")
+                            }
+                        }
+                    },
+                    error: function(XMLHttpRequest, textStatus, errorThrown) {
+                        layer.close(subLayer);
+                        showMsg("下单失败!!!")
+                    }
+                });
+
+
+                $('#refer1').attr('disabled', false).val('立即提交');
+
+                loadRegion();
+            } else {
+
+                showMsg('选择规格')
+            }
+        })
+
+        $('#cbp-qtrotator').cbpQTRotator();
+
+        $('#eprovinceName').change(function() {
             addrId = '';
             addr = '';
-            var $this = $(this);
-            var $selectOption = $this.find('option:selected');
+
+            var $selectOption = $('#eprovinceName').find('option:selected');
             var id = $selectOption.val();
             if (id === 'x') { // 说明他没有选中
                 console.log("省份没有选择");
-                $city.html('<option class="city" value="y" selected>-选择城市-</option>');
-                $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+                $('#ecityName').html('<option class="city" value="y" selected>-选择城市-</option>');
+                $('#edistrictName').html('<option class="county" value="z" selected>-选择区县-</option>');
             } else {
                 var cityIndex = layer.open({
                     type: 2,
@@ -1526,15 +1437,15 @@
                     url: 'https://api.qiwanfan.com/v1/base/region/citys/' + id,
                     type: 'get',
                     success: function(response) {
+                        layer.close(cityIndex);
                         var data = response.data;
                         var len = data.length;
                         var str = '<option class="city" value="y" selected>-选择城市-</option>';
                         for (var i = 0; i < len; i++) {
                             str += '<option class="city" value=' + data[i].id + '>' + data[i].name + '</option>'
                         };
-                        $this.closest("form").find("select[name='cityName']").html(str);
-                        $this.closest("form").find("select[name='districtName']").html('<option class="county" value="z" selected>-选择区县-</option>');
-                        layer.close(cityIndex);
+                        $('#ecityName').html(str);
+                        $('#edistrictName').html('<option class="county" value="z" selected>-选择区县-</option>');
                     },
                     error: function() {
                         layer.close(cityIndex);
@@ -1543,19 +1454,16 @@
                 });
             }
         })
-
-        $city.change(function() {
+        $("#ecityName").change(function() {
             addrId = '';
             addr = '';
-            var $this = $(this);
-            var $district = $this.closest("form").find("select[name='districtName']"); 
-            var $selectOption = $this.find('option:selected');
+
+            var $selectOption = $(this).find('option:selected');
             var id = $selectOption.val();
             if (id === 'y') {
                 console.log("城市没有选择");
-                $district.html('<option class="county" value="z" selected>-选择区县-</option>');
+                $('#edistrictName').html('<option class="county" value="z" selected>-选择区县-</option>');
             } else {
-
                 var quIndex = layer.open({
                     type: 2,
                     content: '加载区县中'
@@ -1565,16 +1473,14 @@
                     url: 'https://api.qiwanfan.com/v1/base/region/countys/' + id,
                     type: 'get',
                     success: function(response) {
+                        layer.close(quIndex)
                         var data = response.data;
                         var len = data.length;
                         var str = '<option class="county" value="z" selected>-选择区县-</option>';
                         for (var i = 0; i < len; i++) {
                             str += '<option class="county"  value = ' + data[i].id + ' >' + data[i].name + '</option > '
                         };
-                        $district.html(str);
-
-                        layer.close(quIndex)
-
+                        $('#edistrictName').html(str);
                     },
                     error: function() {
                         layer.close(quIndex);
@@ -1584,12 +1490,10 @@
             }
         })
 
-        $district.change(function() {
+        $("#edistrictName").change(function() {
             addrId = '';
             addr = '';
-            var $this = $(this);
-            var $province = $this.closest("form").find("select[name='provinceName']"); 
-            var $city = $this.closest("form").find("select[name='cityName']"); 
+
             var $selectOption = $(this).find('option:selected');
             var id = $selectOption.val();
             var name = $selectOption.text();
@@ -1597,19 +1501,10 @@
                 console.log("区县没有选择");
             } else {
                 addrId = id;
-                addr = $province.find('option:selected').text() + $city.find('option:selected').text() + $this.find('option:selected').text();
+                addr = $("#eprovinceName").find('option:selected').text() + $("#ecityName").find('option:selected').text() + $(this).find('option:selected').text();
                 console.log("选择的地址信息", addrId, addr);
             }
         })
-
-        }
-
-        formHandle("#form1");
-        formHandle("#form2");
-        formHandle("#form3");
-        
-        $('#cbp-qtrotator').cbpQTRotator();
-
     })
 
     var _paq = _paq || [];
@@ -1619,7 +1514,7 @@
     (function() {
         var u = "//piwik.whjblk.com/";
         _paq.push(['setTrackerUrl', u + 'piwik.php']);
-        _paq.push(['setSiteId', '2']);
+        _paq.push(['setSiteId', '28']);
         var d = document,
             g = d.createElement('script'),
             s = d.getElementsByTagName('script')[0];
@@ -1648,6 +1543,5 @@
         s.parentNode.insertBefore(ta, s);
     })(window);
     </script>
-
-    </body>
+</body>
 </html>
